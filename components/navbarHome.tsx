@@ -27,7 +27,8 @@ const NavHome = () => {
   const handleDaftarClick = () => {
     if (slot == 1) {
       // Allow registration if there are available slots
-      window.open("https://bit.ly/CYBERACADEMY2324", "_blank");
+      // window.open("https://bit.ly/CYBERACADEMY2324", "_blank");
+      window.location.href = "/pendaftaran"
     } else {
       // Show a pop-up notification if the maximum limit is reached
       window.location.href = "/fullform";

@@ -17,7 +17,7 @@ const RegistrationButton = () => {
     } else if (timeleft == "") {
     } else {
       // Show a pop-up notification if the maximum limit is reached
-      window.open("https://bit.ly/CYBERACADEMY2324", "_blank");
+      window.location.href = "/pendaftaran";
     }
   };
 

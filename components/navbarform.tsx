@@ -30,7 +30,7 @@ const NavForm = () => {
         </div>
         <div className="navbar-center">
           <label
-            className="text-[25px] font-forest-road font-bold mt-[7px] md:text-[38px] md:mt-[10px] lg:text-[43px] lg:mt-[12px]"
+            className="text-[20px] font-forest-road font-bold md:text-[30px] md:mt-[3px] lg:text-[43px] lg:mt-[4px]"
             style={{ color: "#ba2025" }}
           >
             FORM PENDAFTARAN

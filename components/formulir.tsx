@@ -41,7 +41,7 @@ export default function GeneralQuestionForm() {
   }
 
   return (
-    <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
+    <div className="min-w-full">
       <div className="flex flex-col gap-2">
         <div className="w-1/2 md:w-56 lg:w-64"></div>
         <div className="flex mx-auto p-3 mb-20 lg:mb-24">
@@ -102,17 +102,9 @@ export default function GeneralQuestionForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Gender</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="w-[180px]">
-                              <SelectValue placeholder="Select an Option" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="men">Men</SelectItem>
-                            <SelectItem value="women">Women</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <FormControl>
+                          <Input className="size-20px" placeholder="Ex: Laki/Perempuan" {...field} />
+                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -128,17 +120,9 @@ export default function GeneralQuestionForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Faculty</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="w-[167px] md:w-[193px]">
-                              <SelectValue placeholder="Select an Option" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="FTE">TEKNIK ELEKTRO</SelectItem>
-                            <SelectItem value="FRI">REKAYASA INDUSTRI</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <FormControl>
+                          <Input className="size-20px" placeholder="Ex: FTE/FRI" {...field} />
+                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -150,19 +134,10 @@ export default function GeneralQuestionForm() {
                     name="year_of_enrollment"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Year of enrollment</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="w-[167px] md:w-[193px]">
-                              <SelectValue placeholder="Select an Option" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="2021">2021</SelectItem>
-                            <SelectItem value="2022">2022</SelectItem>
-                            <SelectItem value="2023">2023</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <FormLabel>Year of Enrollment</FormLabel>
+                        <FormControl>
+                          <Input className="size-20px" placeholder="Ex: 2021/2022" {...field} />
+                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -252,7 +227,7 @@ export default function GeneralQuestionForm() {
                 />
               </div>
 
-              <Button type="submit">Submit</Button>
+              <Button type="submit" >Submit</Button>
             </form>
           </Form>
         </div>

@@ -9,7 +9,7 @@ const page = () => {
       <div className="sticky top-0 z-50">
         <NavForm />
       </div>
-      <div>
+      <div className="-mt-[30px] md:-mt-[20px] lg:mt-[30px]">
         <Form />
       </div>
     </>

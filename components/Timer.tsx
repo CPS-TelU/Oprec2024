@@ -19,7 +19,7 @@ const calculateTimeRemaining = (countdown: number): Countdown => {
   return { days, hours, minutes, seconds };
 };
 
-const targetDateUTC = new Date("2023-10-29T11:59:59Z");
+const targetDateUTC = new Date("2023-12-17T11:59:59Z");
 const targetDateWIB = new Date(targetDateUTC.getTime() + 5 * 60 * 60 * 1000);
 
 const Timer = () => {
