@@ -27,7 +27,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function GeneralQuestionForm() {
 
@@ -38,6 +38,8 @@ export default function GeneralQuestionForm() {
   function onSubmit(data: z.infer<typeof FormSchema>) {
     const { note, ...formData } = data;
     console.log(formData);
+    window.alert('Your form has been submitted.');
+    window.location.href = '/';
   }
 
   return (

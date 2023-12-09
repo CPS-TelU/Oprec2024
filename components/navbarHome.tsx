@@ -41,12 +41,12 @@ const NavHome = () => {
         <div className="navbar-start md:ml-2 lg:ml-5 ">
           <div className="hidden lg:flex flex-row items-center">
             <a
-              className="font-viga font-bold mt-1 text-[22px] xl:text-[28px]"
+              className="font-viga font-bold mt-1 text-[28px] xl:text-[30px]"
               style={{ color: "#ba2025" }}
               href="/"
               rel="noopener noreferrer"
             >
-              CYBER ACADEMY
+              CYREC
             </a>
           </div>
           <div className="drawer lg:hidden">
@@ -135,16 +135,16 @@ const NavHome = () => {
                     <button>Benefit</button>
                   </ScrollLink>
                 </li>
-                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px]">
+                {/* <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px]">
                   <ScrollLink
                     to="course"
                     smooth={true}
                     offset={-100}
                     duration={500}
                   >
-                    <button>Course</button>
+                    <button>Submit Your Task</button>
                   </ScrollLink>
-                </li>
+                </li> */}
                 <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px] md:hidden">
                   <ScrollLink
                     to="daftar"
@@ -181,12 +181,12 @@ const NavHome = () => {
         </div>
         <div className="navbar-center">
           <a
-            className="text-[23px] font-viga font-bold md:text-[28px] lg:hidden"
+            className="text-[23px] font-viga font-bold md:text-[32px] lg:hidden"
             style={{ color: "#ba2025" }}
             href="/"
             rel="noopener noreferrer"
           >
-            CYBER ACADEMY
+            CYBER RECRUITMENT
           </a>
           <div
             className="hidden lg:block items-center justify-end -mt-[1px] text-[17px] lg:text-[20px]"
@@ -213,16 +213,16 @@ const NavHome = () => {
                   <button>Benefit</button>
                 </ScrollLink>
               </li>
-              <li className="font-plus-jakarta-sans font-semibold text-[19px] xl:text-[21px]">
+              {/* <li className="font-plus-jakarta-sans font-semibold text-[19px] xl:text-[21px]">
                 <ScrollLink
                   to="course"
                   smooth={true}
                   offset={-100}
                   duration={500}
                 >
-                  <button>Course</button>
+                  <button>Submit Your Task</button>
                 </ScrollLink>
-              </li>
+              </li> */}
               <li className="font-plus-jakarta-sans font-semibold text-[19px] xl:text-[21px]">
                 <ScrollLink
                   to="skberkas"

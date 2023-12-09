@@ -22,12 +22,12 @@ export default function Home() {
       <div className="mb-12 md:mb-7">
         <About />
       </div>
-      <div className="mb-40 md:mb-72 lg:mb-44">
+      <div className="mb-20 md:mb-28 lg:mb-44">
         <Benefit />
       </div>
-      <div className="mb-32 md:mb-80 lg:mb-64">
+      {/* <div className="mb-20 md:mb-32 lg:mb-32">
         <Course />
-      </div>
+      </div> */}
       <div className=" md:hidden">
         <SdanK />
       </div>

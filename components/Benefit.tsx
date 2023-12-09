@@ -12,8 +12,8 @@ const Benefits = () => {
       >
         ❯ Benefit You Will Get ❮
       </h1>
-      <p className="font-plus-jakarta-sans font-semibold text-center mb-12 mt-3 md:text-[20px] lg:hidden">
-        ❮Swipe to change card❯
+      <p className="font-plus-jakarta-sans font-semibold text-center mb-12 mt-3 md:text-[20px] lg:hidden" style={{ color: "#ba2025" }}>
+        *Swipe to change card*
       </p>
       <div className="min-w-screen flex justify-center lg:hidden">
         <div className="w-64 carousel rounded-box shadow-2xl md:w-96">
