@@ -1,38 +1,102 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import styles from "./Partner.module.css";
+import { useInView } from "react-intersection-observer";
 
 const Partner = () => {
   const partners_list = [
     { src: "/partner/hmtt.png", href: "https://www.instagram.com/hmtt_telco/" },
-    { src: "/partner/labrl.png", href: "https://www.instagram.com/rangkaianlistriklab/" },
-    { src: "/partner/imv.png", href: "https://www.instagram.com/imv.laboratory/" },
-    { src: "/partner/embun.png", href: "https://www.instagram.com/embununitel/" },
-    { src: "/partner/Antenna.png", href: "https://www.instagram.com/antena.lab/" },
-    { src: "/partner/elkom.jpg", href: "https://www.instagram.com/elkomlaboratory/" },
-    { src: "/partner/daskom.png", href: "https://www.instagram.com/telu.daskom/" },
-    { src: "/partner/tekdig.jpg", href: "https://www.instagram.com/tekdig.telu/" },
-    { src: "/partner/sko.png", href: "https://www.instagram.com/opticomm.laboratory/" },
-    { src: "/partner/dastran.png", href: "https://www.instagram.com/dastranlaboratory/" },
-    { src: "/partner/dsp.jpg", href: "https://www.instagram.com/dsp.laboratory/" },
+    {
+      src: "/partner/labrl.png",
+      href: "https://www.instagram.com/rangkaianlistriklab/",
+    },
+    {
+      src: "/partner/imv.png",
+      href: "https://www.instagram.com/imv.laboratory/",
+    },
+    {
+      src: "/partner/embun.png",
+      href: "https://www.instagram.com/embununitel/",
+    },
+    {
+      src: "/partner/Antenna.png",
+      href: "https://www.instagram.com/antena.lab/",
+    },
+    {
+      src: "/partner/elkom.jpg",
+      href: "https://www.instagram.com/elkomlaboratory/",
+    },
+    {
+      src: "/partner/daskom.png",
+      href: "https://www.instagram.com/telu.daskom/",
+    },
+    {
+      src: "/partner/tekdig.jpg",
+      href: "https://www.instagram.com/tekdig.telu/",
+    },
+    {
+      src: "/partner/sko.png",
+      href: "https://www.instagram.com/opticomm.laboratory/",
+    },
+    {
+      src: "/partner/dastran.png",
+      href: "https://www.instagram.com/dastranlaboratory/",
+    },
+    {
+      src: "/partner/dsp.jpg",
+      href: "https://www.instagram.com/dsp.laboratory/",
+    },
     { src: "/partner/mbc.png", href: "https://www.instagram.com/mbclab/" },
-    { src: "/partner/sisjar.jpg", href: "https://www.instagram.com/sisjarlab/" },
-    { src: "/partner/adaptive.png", href: "https://www.instagram.com/adaptivenetlab/" },
-    { src: "/partner/sea.png", href: "https://www.instagram.com/sea.laboratory/" },
-    { src: "/partner/Nanosatellite.png", href: "https://www.instagram.com/isatellitesociety/" },
-    { src: "/partner/aicoms.png", href: "https://www.instagram.com/aicoms.telkomuniv/" },
-    { src: "/partner/elektronika.jpg", href: "https://www.instagram.com/electronicslaboratory/" },
+    {
+      src: "/partner/sisjar.jpg",
+      href: "https://www.instagram.com/sisjarlab/",
+    },
+    {
+      src: "/partner/adaptive.png",
+      href: "https://www.instagram.com/adaptivenetlab/",
+    },
+    {
+      src: "/partner/sea.png",
+      href: "https://www.instagram.com/sea.laboratory/",
+    },
+    {
+      src: "/partner/Nanosatellite.png",
+      href: "https://www.instagram.com/isatellitesociety/",
+    },
+    {
+      src: "/partner/aicoms.png",
+      href: "https://www.instagram.com/aicoms.telkomuniv/",
+    },
+    {
+      src: "/partner/elektronika.jpg",
+      href: "https://www.instagram.com/electronicslaboratory/",
+    },
     { src: "/partner/upci.png", href: "https://www.instagram.com/upcilab/" },
-    { src: "/partner/mobcomm.png", href: "https://www.instagram.com/mobilecommlaboratory/" },
+    {
+      src: "/partner/mobcomm.png",
+      href: "https://www.instagram.com/mobilecommlaboratory/",
+    },
   ];
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever the element comes into view
+  });
   return (
-    <div className={styles.partnerArea} id="partner">
+    <div
+      className={styles.partnerArea}
+      id="partner"
+      ref={ref}
+      style={{
+        transform: inView ? "translateX(0)" : "translateX(-100%)",
+        transition: "transform 2s",
+      }}
+    >
       <div className="container mx-auto sm:px-4">
         <h1
           className="flex justify-center text-3xl font-viga font-regular mb-16 md:text lg:text"
           style={{ color: "#231f20" }}
         >
-         ❯ Our Media Partner ❮
+          ❯ Our Media Partner ❮
         </h1>
         <div className="md:hidden">
           <div className="flex flex-wrap ">

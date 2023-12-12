@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Skberkas = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -11,11 +12,15 @@ const Skberkas = () => {
       setActiveAccordion(id);
     }
   };
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever the element comes into view
+  });
 
   return (
-    <div className="container h-96" id="skberkas">
+    <div className="container h-96" id="skberkas" ref={ref} style={{ transform: inView ? "translateX(0)" : "translateX(-100%)",
+    transition: "transform 2s",}}>
       <h1
-        className="flex justify-center text-3xl font-viga font-regular mb-20"
+        className="flex justify-center text-3xl font-viga font-regular mb-4"
         style={{ color: "#231f20" }}
       >
         ❯ Requirement ❮

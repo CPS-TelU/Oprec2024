@@ -34,7 +34,7 @@ export default function Home() {
       <div className=" md:hidden">
         <Berkas />
       </div>
-      <div className="hidden md:block md:mb-80">
+      <div className="hidden md:block md:mb-36">
         <Skberkas />
       </div>
       <div className="mb-32 mt-32">

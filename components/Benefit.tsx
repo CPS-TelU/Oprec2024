@@ -2,17 +2,33 @@
 import React from "react";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+
 
 const Benefits = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever the element comes into view
+  });
   return (
-    <div className="container" id="benefit">
+    <div
+      className="container"
+      id="benefit"
+      ref={ref}
+      style={{
+        transform: inView ? "translateX(0)" : "translateX(-100%)",
+        transition: "transform 2s",
+      }}
+    >
       <h1
         className="flex justify-center text-2xl font-viga font-bold lg:text-3xl"
         style={{ color: "#231f20" }}
       >
         ❯ Benefit You Will Get ❮
       </h1>
-      <p className="font-plus-jakarta-sans font-semibold text-center mb-12 mt-3 md:text-[20px] lg:hidden" style={{ color: "#ba2025" }}>
+      <p
+        className="font-plus-jakarta-sans font-semibold text-center mb-12 mt-3 md:text-[20px] lg:hidden"
+        style={{ color: "#ba2025" }}
+      >
         *Swipe to change card*
       </p>
       <div className="min-w-screen flex justify-center lg:hidden">
@@ -140,9 +156,9 @@ const Benefits = () => {
       </div>
       <div className="hidden lg:block mt-10">
         <div className="flex flex-col gap-10">
-          <div className="flex flex-row justify-between ">
+          <div className="flex flex-row justify-center gap-5 xl:gap-8">
             <div className="m-4 max-w-sm">
-              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-80 h-72">
+              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-72 h-72">
                 <CardHeader className="bg-red-700 p-4 flex-row gap-4 rounded-t-lg">
                   <div>
                     <Image
@@ -167,7 +183,7 @@ const Benefits = () => {
               </Card>
             </div>
             <div className="m-4 max-w-sm">
-              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-80 h-72">
+              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-72 h-72">
                 <CardHeader className="bg-red-700 p-4 flex-row gap-4 rounded-t-lg">
                   <div>
                     <Image
@@ -192,7 +208,7 @@ const Benefits = () => {
               </Card>
             </div>
             <div className="m-4 max-w-sm">
-              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-80 h-72">
+              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-72 h-72">
                 <CardHeader className="bg-red-700 p-4 flex-row gap-4 rounded-t-lg">
                   <div>
                     <Image
@@ -216,9 +232,9 @@ const Benefits = () => {
               </Card>
             </div>
           </div>
-          <div className="flex flex-row justify-center px-28 gap-10">
+          <div className="flex flex-row justify-center gap-5 xl:gap-8">
             <div className="m-4 max-w-sm">
-              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-80 h-72">
+              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-72 h-72">
                 <CardHeader className="bg-red-700 p-4 flex-row gap-4 rounded-t-lg">
                   <div>
                     <Image
@@ -241,7 +257,7 @@ const Benefits = () => {
               </Card>
             </div>
             <div className="m-4 max-w-sm">
-              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-80 h-72">
+              <Card className="flex flex-col w-64 h-72 bg-white shadow-lg hover:shadow-xl rounded-lg xl:w-72 h-72">
                 <CardHeader className="bg-red-700 p-4 flex-row gap-4 rounded-t-lg">
                   <div>
                     <Image

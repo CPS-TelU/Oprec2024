@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Berkas = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -11,9 +12,20 @@ const Berkas = () => {
       setActiveAccordion(id);
     }
   };
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever the element comes into view
+  });
 
   return (
-    <div className="container p-2" id="berkas">
+    <div
+      className="container p-2"
+      id="berkas"
+      ref={ref}
+      style={{
+        transform: inView ? "translateX(0)" : "translateX(-100%)",
+        transition: "transform 2s",
+      }}
+    >
       <div className="text-center mb-8"></div>
       <div className="join join-vertical">
         <div
