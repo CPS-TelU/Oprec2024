@@ -35,11 +35,33 @@ export default function GeneralQuestionForm() {
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     const { note, ...formData } = data;
-    console.log(formData);
-    window.alert('Your form has been submitted.');
-    window.location.href = '/';
-  }
 
+    // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
+    const apiUrl = 'https://cyberrecruitment.vercel.app/participant';
+
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((responseData) => {
+        console.log('API response:', responseData);
+        window.alert('Your form has been submitted.');
+        window.location.href = '/';
+      })
+      .catch((error) => {
+        console.error('Error submitting form:', error);
+        window.alert('Error submitting form. Please try again.');
+      });
+  }
   return (
     <div className="min-w-full">
       <div className="flex flex-col gap-2">
