@@ -29,6 +29,7 @@ module.exports = {
         "3": "0.1em",
         // Add more classes and values as needed
       },
+      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -22,8 +22,9 @@ const Berkas = () => {
       id="berkas"
       ref={ref}
       style={{
-        transform: inView ? "translateX(0)" : "translateX(-100%)",
-        transition: "transform 2s",
+        transform: inView ? "translateX(0)" : "translateX(-50%)",
+        opacity: inView ? 1 : 0,
+        transition: "transform 2s, opacity 1s",
       }}
     >
       <div className="text-center mb-8"></div>

@@ -17,15 +17,27 @@ const Skberkas = () => {
   });
 
   return (
-    <div className="container h-96" id="skberkas" ref={ref} style={{ transform: inView ? "translateX(0)" : "translateX(-100%)",
-    transition: "transform 2s",}}>
+    <div className="container h-96" id="skberkas">
       <h1
         className="flex justify-center text-3xl font-viga font-regular mb-4"
-        style={{ color: "#231f20" }}
+        ref={ref}
+        style={{
+          color: "#231f20",
+          opacity: inView ? 1 : 0,
+          transition: "opacity 2.5s",
+        }}
       >
         ❯ Requirement ❮
       </h1>
-      <div className="flex h-full flex-row items-center">
+      <div
+        ref={ref}
+        style={{
+          transform: inView ? "translateY(0)" : "translateY(15%)",
+          opacity: inView ? 1 : 0,
+          transition: "transform 2s, opacity 1s",
+        }}
+        className="flex h-full flex-row items-center"
+      >
         <div
           className="w-1/2 justify-center items-center space-y-7 -mt-3 p-[19px] lg:space-y-10 lg:p-[40px]"
           style={{ backgroundColor: "ba2025" }}

@@ -34,20 +34,43 @@ export default function GeneralQuestionForm() {
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     const { note, ...formData } = data;
-    window.alert("Your form has been submitted.");
 
-    await fetch("/api/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: formData.email,
-      }),
-    });
-    // window.location.href = '/';
+    // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
+    const apiUrl = 'https://cyberrecruitment.vercel.app/participant';
+
+    // fetch(apiUrl, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(formData),
+    // })
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error('Network response was not ok');
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((responseData) => {
+    //     console.log('API response:', responseData);
+    //     window.alert('Your form has been submitted.');
+    //     window.location.href = '/';
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error submitting form:', error);
+    //     window.alert('Error submitting form. Please try again.');
+    //   });
+
+      await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+        }),
+      });
   }
-
   return (
     <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
       <div className="flex flex-col gap-2">

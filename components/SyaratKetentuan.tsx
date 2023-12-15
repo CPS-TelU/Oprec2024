@@ -10,21 +10,28 @@ const ContentSplit: React.FC = () => {
     <div
       className="flex flex-col justify-center items-center p-2 mt-3 md:"
       id="daftar"
-      ref={ref}
-      style={{
-        transform: inView ? "translateX(0)" : "translateX(-100%)",
-        transition: "transform 2s",
-      }}
     >
       <h1
         className="flex justify-center text-3xl font-viga font-regular mb-16 md:text lg:text"
-        style={{ color: "#231f20" }}
+        ref={ref}
+        style={{
+          color: "#231f20",
+          opacity: inView ? 1 : 0,
+          transition: "opacity 2.5s",
+        }}
       >
         ❯ Requirement ❮
       </h1>
       <div
+        ref={ref}
+        style={{
+          backgroundColor: "#ba2025",
+          border: "1px solid #231f20",
+          transform: inView ? "translateX(0)" : "translateX(-50%)",
+          opacity: inView ? 1 : 0,
+          transition: "transform 2s, opacity 1s",
+        }}
         className="rounded-lg p-4 w-full max-w-xl text-white"
-        style={{ backgroundColor: "#ba2025", border: "1px solid #231f20" }}
       >
         <div>
           <h2 className="text-lg font-viga font-regular mb-5 text-center">
