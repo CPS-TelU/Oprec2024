@@ -13,7 +13,7 @@ const Benefits = () => {
     <div
       className="container"
       id="benefit"
-      ref={ref}
+      ref={ref} 
       style={{
         transform: inView ? "translateX(0)" : "translateX(-100%)",
         transition: "transform 2s",

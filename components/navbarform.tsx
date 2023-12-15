@@ -33,7 +33,7 @@ const NavForm = () => {
             className="text-[20px] font-forest-road font-bold md:text-[30px] md:mt-[3px] lg:text-[43px] lg:mt-[4px]"
             style={{ color: "#ba2025" }}
           >
-            FORM PENDAFTARAN
+            REGISTRATION FORM
           </label>
         </div>
         <div className="navbar-end">

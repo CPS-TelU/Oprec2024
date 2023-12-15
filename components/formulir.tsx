@@ -7,7 +7,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import * as z from "zod";
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const FormSchema = z
   .object({
@@ -19,7 +19,7 @@ const FormSchema = z
     gender: z.string().min(1, "Gender is required"),
     year_of_enrollment: z.string().min(1, "Year of enrollment is required"),
     faculty: z.string().min(1, "Faculty is required"),
-    major: z.string().min(1, "Department is required"),
+    departement: z.string().min(1, "Department is required"),
     class: z.string().min(1, "Class is required"),
     note: z.boolean(),
   })
@@ -28,20 +28,28 @@ const FormSchema = z
   });
 
 export default function GeneralQuestionForm() {
-
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
     const { note, ...formData } = data;
-    console.log(formData);
-    window.alert('Your form has been submitted.');
-    window.location.href = '/';
+    window.alert("Your form has been submitted.");
+
+    await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: formData.email,
+      }),
+    });
+    // window.location.href = '/';
   }
 
   return (
-    <div className="min-w-full">
+    <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
       <div className="flex flex-col gap-2">
         <div className="w-1/2 md:w-56 lg:w-64"></div>
         <div className="flex mx-auto p-3 mb-20 lg:mb-24">
@@ -83,7 +91,7 @@ export default function GeneralQuestionForm() {
                 <div className="mr-5">
                   <FormField
                     control={form.control}
-                    name="phone_number"
+                    name="phone_number" 
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Whastapp Number</FormLabel>
@@ -102,9 +110,17 @@ export default function GeneralQuestionForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Gender</FormLabel>
-                        <FormControl>
-                          <Input className="size-20px" placeholder="Ex: Laki/Perempuan" {...field} />
-                        </FormControl>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Select an Option" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="men">Men</SelectItem>
+                            <SelectItem value="women">Women</SelectItem>
+                          </SelectContent>
+                        </Select>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -120,9 +136,17 @@ export default function GeneralQuestionForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Faculty</FormLabel>
-                        <FormControl>
-                          <Input className="size-20px" placeholder="Ex: FTE/FRI" {...field} />
-                        </FormControl>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="w-[167px] md:w-[193px]">
+                              <SelectValue placeholder="Select an Option" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="FTE">TEKNIK ELEKTRO</SelectItem>
+                            <SelectItem value="FRI">REKAYASA INDUSTRI</SelectItem>
+                          </SelectContent>
+                        </Select>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -134,10 +158,19 @@ export default function GeneralQuestionForm() {
                     name="year_of_enrollment"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Year of Enrollment</FormLabel>
-                        <FormControl>
-                          <Input className="size-20px" placeholder="Ex: 2021/2022" {...field} />
-                        </FormControl>
+                        <FormLabel>Year of enrollment</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="w-[167px] md:w-[193px]">
+                              <SelectValue placeholder="Select an Option" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="2021">2021</SelectItem>
+                            <SelectItem value="2022">2022</SelectItem>
+                            <SelectItem value="2023">2023</SelectItem>
+                          </SelectContent>
+                        </Select>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -147,10 +180,10 @@ export default function GeneralQuestionForm() {
               <div className="mb-8 mt-8">
                 <FormField
                   control={form.control}
-                  name="major"
+                  name="departement"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Major</FormLabel>
+                      <FormLabel>Departement</FormLabel>
                       <FormControl>
                         <Input placeholder="Ex : S1 Teknik Telekomunikasi" {...field} />
                       </FormControl>
@@ -227,7 +260,7 @@ export default function GeneralQuestionForm() {
                 />
               </div>
 
-              <Button type="submit" >Submit</Button>
+              <Button type="submit">Submit</Button>
             </form>
           </Form>
         </div>
