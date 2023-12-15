@@ -9,6 +9,8 @@ import NavHome from "@/components/navbarHome";
 import React from "react";
 import Partner from "@/components/Partner";
 import Skberkas from "@/components/skBerkas";
+import Landing from "@/components/Landing";
+import Videoplayer from "@/components/Videoplayer";
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
         <NavHome />
       </div>
       <div className="mb-16 md:mb-32 lg:mb-9">
-        <VideoPlayer />
+        <Videoplayer />
       </div>
       <div className="mb-12 md:mb-7">
         <About />

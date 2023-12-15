@@ -2,6 +2,8 @@
 import React, { useEffect, useRef, useState, Suspense } from "react";
 import RegistrationButton from "./ui/registration-button";
 import Timer from "./Timer";
+import bgImage from "@/public/Landing.png";
+import Image from "next/image";
 import { preload } from "react-dom";
 
 const Video: React.FC = () => {
@@ -25,9 +27,14 @@ const Video: React.FC = () => {
         }}
         className="hidden lg:block"
       >
-        <video autoPlay loop muted playsInline ref={videoRef} style={{ width: "100%", borderRadius: "12px" }} preload="auto">
-          <source src="/teaser.mp4" type="video/mp4" />
-        </video>
+         <Image
+          src={bgImage}
+          alt="Background Image"
+          width={1000}
+          height={1000}
+          loading="eager"
+          priority={true}
+        />
       </div>
       <div
         style={{
@@ -39,9 +46,14 @@ const Video: React.FC = () => {
         }}
         className="hidden md:block lg:hidden"
       >
-        <video autoPlay loop muted playsInline ref={videoRef} style={{ width: "100%", borderRadius: "12px" }} preload="auto">
-          <source src="/teaser.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src={bgImage}
+          alt="Background Image"
+          width={1000}
+          height={1000}
+          loading="eager"
+          priority={true}
+        />
       </div>
       <div
         style={{
@@ -53,9 +65,14 @@ const Video: React.FC = () => {
         }}
         className="md:hidden"
       >
-        <video autoPlay loop muted playsInline ref={videoRef} style={{ width: "100%", borderRadius: "12px" }} preload="auto">
-          <source src="/teaser.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src={bgImage}
+          alt="Background Image"
+          width={1000}
+          height={1000}
+          loading="eager"
+          priority={true}
+        />
       </div>
 
       <Timer/>

@@ -47,7 +47,7 @@ const Timer = () => {
   const secondsstyle = { "--value": seconds } as React.CSSProperties;
 
   return (
-    <div className="flex justify-center items-center mt-8 md:mt-4 lg:mt-4">
+    <div className="flex justify-center items-center -mt-5">
       <div className="rounded-lg p-5">
         <div className="grid grid-flow-col gap-5 md:gap-10 font-viga font-bold text-center auto-cols-max">
           <div

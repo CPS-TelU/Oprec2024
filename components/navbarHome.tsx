@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import RegistrationButton from "./ui/registration-button";
+import { useGlobalContext } from "@/app/context/timeleft";
 
 const slot = 1;
 
@@ -24,14 +25,19 @@ const NavHome = () => {
     background: `#f4f4f4`,
     boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
   };
+  const { timeleft } = useGlobalContext();
+
+  const timeArray = timeleft.split(":");
+  const [hours, minutes, seconds, milliseconds] = timeArray.map(Number);
+
   const handleDaftarClick = () => {
-    if (slot == 1) {
+    if (hours < 0 || minutes < 0 || seconds < 0 || milliseconds < 0) {
+      window.location.href = "/fullform";
       // Allow registration if there are available slots
-      // window.open("https://bit.ly/CYBERACADEMY2324", "_blank");
-      window.location.href = "/pendaftaran"
+    } else if (timeleft == "") {
     } else {
       // Show a pop-up notification if the maximum limit is reached
-      window.location.href = "/fullform";
+      window.location.href = "/pendaftaran";
     }
   };
 
@@ -41,12 +47,12 @@ const NavHome = () => {
         <div className="navbar-start md:ml-2 lg:ml-5 ">
           <div className="hidden lg:flex flex-row items-center">
             <a
-              className="font-viga font-bold mt-1 text-[28px] xl:text-[30px]"
+              className="font-viga font-bold mt-1 mx-5 text-[24px]"
               style={{ color: "#ba2025" }}
               href="/"
               rel="noopener noreferrer"
             >
-              CYREC
+              CYBER RECRUITMENT
             </a>
           </div>
           <div className="drawer lg:hidden">
@@ -96,26 +102,36 @@ const NavHome = () => {
                 className="drawer-overlay"
               ></label>
               <ul
-                className="menu p-4 space-y-3 w-52 min-h-full text-base-content md:w-80 md:space-y-5"
+                className="menu p-4 space-y-3 w-56 min-h-full text-base-content md:w-80 md:space-y-5"
                 style={{
                   background: "#f4f4f4",
                   color: "#231f20",
                 }}
               >
                 {/* Sidebar content here */}
-                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px]">
+                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px]">
                   <a
                     onClick={handleDaftarClick}
                     style={{
                       fontSmooth: "true",
                       offset: "-100",
                       animationDuration: "500",
+                      whiteSpace: 'nowrap'
                     }}
                   >
-                    Register
+                    {timeleft == "" ? (
+                      "Loading"
+                    ) : hours < 0 ||
+                      minutes < 0 ||
+                      seconds < 0 ||
+                      milliseconds < 0 ? (
+                      "Registration Closed"
+                    ) : (
+                      <>Register</>
+                    )}
                   </a>
                 </li>
-                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px]">
+                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px]">
                   <ScrollLink
                     to="about"
                     smooth={true}
@@ -125,7 +141,7 @@ const NavHome = () => {
                     <button>About</button>
                   </ScrollLink>
                 </li>
-                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px]">
+                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px]">
                   <ScrollLink
                     to="benefit"
                     smooth={true}
@@ -135,7 +151,7 @@ const NavHome = () => {
                     <button>Benefit</button>
                   </ScrollLink>
                 </li>
-                {/* <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px]">
+                {/* <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px]">
                   <ScrollLink
                     to="course"
                     smooth={true}
@@ -145,7 +161,7 @@ const NavHome = () => {
                     <button>Submit Your Task</button>
                   </ScrollLink>
                 </li> */}
-                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px] md:hidden">
+                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px] md:hidden">
                   <ScrollLink
                     to="daftar"
                     smooth={true}
@@ -155,7 +171,7 @@ const NavHome = () => {
                     <button>Requirement</button>
                   </ScrollLink>
                 </li>
-                <li className="hidden md:block font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px]">
+                <li className="hidden md:block font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px]">
                   <ScrollLink
                     to="skberkas"
                     smooth={true}
@@ -165,7 +181,7 @@ const NavHome = () => {
                     <button>Requirement</button>
                   </ScrollLink>
                 </li>
-                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[21px]">
+                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px]">
                   <ScrollLink
                     to="partner"
                     smooth={true}
@@ -188,12 +204,18 @@ const NavHome = () => {
           >
             CYBER RECRUITMENT
           </a>
+        </div>
+        {/* NAVBAR END */}
+        <div
+          className="navbar-end"
+          style={{ color: "#231f20" }}
+        >
           <div
-            className="hidden lg:block items-center justify-end -mt-[1px] text-[17px] lg:text-[20px]"
+            className="hidden lg:block items-center justify-end mr-5 -mt-[1px] text-[17px] lg:text-[20px]"
             style={{ color: "#231f20" }}
           >
-            <ul className="flex space-x-6">
-              <li className="font-plus-jakarta-sans font-semibold text-[19px] xl:text-[21px]">
+            <ul className="flex space-x-6 gap-2">
+              <li className="font-plus-jakarta-sans font-semibold text-[18px]">
                 <ScrollLink
                   to="about"
                   smooth={true}
@@ -203,7 +225,7 @@ const NavHome = () => {
                   <button>About</button>
                 </ScrollLink>
               </li>
-              <li className="font-plus-jakarta-sans font-semibold text-[19px] xl:text-[21px]">
+              <li className="font-plus-jakarta-sans font-semibold text-[18px]">
                 <ScrollLink
                   to="benefit"
                   smooth={true}
@@ -213,7 +235,7 @@ const NavHome = () => {
                   <button>Benefit</button>
                 </ScrollLink>
               </li>
-              {/* <li className="font-plus-jakarta-sans font-semibold text-[19px] xl:text-[21px]">
+              {/* <li className="font-plus-jakarta-sans font-semibold text-[18px]">
                 <ScrollLink
                   to="course"
                   smooth={true}
@@ -223,7 +245,7 @@ const NavHome = () => {
                   <button>Submit Your Task</button>
                 </ScrollLink>
               </li> */}
-              <li className="font-plus-jakarta-sans font-semibold text-[19px] xl:text-[21px]">
+              <li className="font-plus-jakarta-sans font-semibold text-[18px]">
                 <ScrollLink
                   to="skberkas"
                   smooth={true}
@@ -233,25 +255,40 @@ const NavHome = () => {
                   <button>Requirement</button>
                 </ScrollLink>
               </li>
-              <li className="font-plus-jakarta-sans font-semibold text-[19px] xl:text-[21px]">
+              <li className="font-plus-jakarta-sans font-semibold text-[18px]">
                 <ScrollLink
                   to="partner"
                   smooth={true}
                   offset={-100}
                   duration={500}
                 >
-                  <button>Media Partner</button>
+                  <button style={{whiteSpace: 'nowrap'}}>Media Partner</button>
                 </ScrollLink>
               </li>
+              <li className="font-plus-jakarta-sans font-semibold text-[18px]">
+                <a
+                  onClick={handleDaftarClick}
+                  style={{
+                    fontSmooth: "true",
+                    offset: "-100",
+                    animationDuration: "500",
+                  }}
+                >
+                  <button style={{whiteSpace: 'nowrap'}}>
+                    {timeleft == "" ? (
+                      "Loading"
+                    ) : hours < 0 ||
+                      minutes < 0 ||
+                      seconds < 0 ||
+                      milliseconds < 0 ? (
+                      "Registration Closed"
+                    ) : (
+                      <>Register</>
+                    )}
+                  </button>
+                </a>
+              </li>
             </ul>
-          </div>
-        </div>
-        <div
-          className="navbar-end md:mr-0 lg:mr-5 "
-          style={{ color: "#231f20" }}
-        >
-          <div className="hidden lg:block lg:scale-90 xl:scale-100">
-            <RegistrationButton />
           </div>
         </div>
       </div>
