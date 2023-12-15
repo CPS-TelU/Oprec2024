@@ -82,19 +82,24 @@ const Partner = () => {
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever the element comes into view
   });
   return (
-    <div
-      className={styles.partnerArea}
-      id="partner"
-      ref={ref}
-      style={{
-        transform: inView ? "translateX(0)" : "translateX(-100%)",
-        transition: "transform 2s",
-      }}
-    >
+    <div className={styles.partnerArea} id="partner">
       <div className="container mx-auto sm:px-4">
         <h1
-          className="flex justify-center text-3xl font-viga font-regular mb-16 md:text lg:text"
-          style={{ color: "#231f20" }}
+          ref={ref}
+          style={{
+            color: "#231f20",
+            opacity: inView ? 1 : 0,
+            transition: "opacity 2.5s",
+          }}
+          className="hidden lg:flex justify-center text-3xl font-viga font-regular mb-16"
+        >
+          ❯ Our Media Partner ❮
+        </h1>
+        <h1
+          style={{
+            color: "#231f20",
+          }}
+          className="flex justify-center text-3xl font-viga font-regular mb-16 lg:hidden"
         >
           ❯ Our Media Partner ❮
         </h1>
@@ -144,7 +149,15 @@ const Partner = () => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:block">
+        <div
+          ref={ref}
+          style={{
+            transform: inView ? "translateY(0)" : "translateY(15%)",
+            opacity: inView ? 1 : 0,
+            transition: "transform 2s, opacity 1s",
+          }}
+          className="hidden lg:block"
+        >
           <div className="flex flex-wrap">
             <div className="w-full pr-4 pl-4">
               <div className={styles.partnerWrap}>

@@ -9,7 +9,6 @@ import NavHome from "@/components/navbarHome";
 import React from "react";
 import Partner from "@/components/Partner";
 import Skberkas from "@/components/skBerkas";
-import Landing from "@/components/Landing";
 import Videoplayer from "@/components/Videoplayer";
 
 export default function Home() {
