@@ -36,7 +36,7 @@ export default function GeneralQuestionForm() {
   function onSubmit(data: z.infer<typeof FormSchema>) {
     const { note, ...formData } = data;
     console.log(formData);
-    window.alert('Your form has been submitted.');
+    window.alert('Your form has been submitted.' + '\n' + 'Please check your email');
     window.location.href = '/';
   }
 
