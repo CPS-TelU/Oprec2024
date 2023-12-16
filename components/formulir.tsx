@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import * as z from "zod";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { FileUp } from "lucide-react";
 
 const FormSchema = z
   .object({
@@ -21,9 +23,11 @@ const FormSchema = z
     faculty: z.string().min(1, "Faculty is required"),
     departement: z.string().min(1, "Department is required"),
     class: z.string().min(1, "Class is required"),
-    note: z.boolean(),
+    note: z.boolean().refine((value) => value === true, {
+      message: "You have to select the checkbox.",
+    }),
   })
-  .refine((data) => data.note, {
+  .refine((data) => data.note === true, {
     message: "You have to select the checkbox.",
   });
 
@@ -36,40 +40,42 @@ export default function GeneralQuestionForm() {
     const { note, ...formData } = data;
 
     // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
-    const apiUrl = 'https://cyberrecruitment.vercel.app/participant';
+    const apiUrl = "https://cyberrecruitment.vercel.app/participant";
 
-    // fetch(apiUrl, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(formData),
-    // })
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error('Network response was not ok');
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((responseData) => {
-    //     console.log('API response:', responseData);
-    //     window.alert('Your form has been submitted.');
-    //     window.location.href = '/';
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error submitting form:', error);
-    //     window.alert('Error submitting form. Please try again.');
-    //   });
-
-      await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-        }),
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((responseData) => {
+        // console.log('API response:', responseData);
+        window.alert('Your form has been submitted.');
+        window.location.href = '/';
+      })
+      .catch((error) => {
+        // console.error('Error submitting form:', error);
+        window.alert('Error submitting form. Please try again.');
       });
+
+    await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: formData.email,
+        firstName : formData.name
+      }),
+    })
+    ;
   }
   return (
     <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
@@ -102,7 +108,7 @@ export default function GeneralQuestionForm() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="Ex : cps@gmail.com" {...field} />
+                        <Input placeholder="Ex : example@gmail.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -114,7 +120,7 @@ export default function GeneralQuestionForm() {
                 <div className="mr-5">
                   <FormField
                     control={form.control}
-                    name="phone_number" 
+                    name="phone_number"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Whastapp Number</FormLabel>
@@ -257,12 +263,42 @@ export default function GeneralQuestionForm() {
                     <FormItem>
                       <FormLabel>Document</FormLabel>
                       <FormControl>
-                        <Input placeholder="Ex : Example : https://drive.google.com/file/d/test/" {...field} />
+                        <Input placeholder="Ex : https://drive.google.com/file/d/.../view?usp=sharing" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
+              </div>
+
+              <div className="mb-8">
+                <Alert variant="destructive">
+                  <AlertTitle>Warning</AlertTitle>
+                  <AlertDescription>Ensure that the document link you{'\u0027'}ve submitted is accessible to the public. Set general access to anyone with the link</AlertDescription>
+                </Alert>
+              </div>
+
+              <div className="mb-8">
+                <Alert>
+                  <FileUp className="h-4 w-4" />
+                  <AlertTitle>Attention!</AlertTitle>
+                  <AlertDescription>
+                    Ensure that all recruitment documents are in accordance with the terms and conditions, such as:
+                    <br />
+                    a. Creative CV
+                    <br />
+                    b. Full Body Photo
+                    <br />
+                    c. Self Description
+                    <br />
+                    d. Vision, Mission, and Motivation
+                    <br />
+                    e. Essay
+                    <br />
+                    <br />
+                    For more detailed information, please refer to the homepage of this website.
+                  </AlertDescription>
+                </Alert>
               </div>
 
               <div className="items-top flex space-x-2 mb-8">
@@ -272,7 +308,7 @@ export default function GeneralQuestionForm() {
                   render={({ field }) => (
                     <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                       <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                        <Checkbox checked={field.value} onCheckedChange={field.onChange} required />
                       </FormControl>
                       <div className="space-y-1 leading-none">
                         <FormLabel>I have filled in all the required data.</FormLabel>
