@@ -21,7 +21,7 @@ const FormSchema = z
     gender: z.string().min(1, "Gender is required"),
     year_of_enrollment: z.string().min(1, "Year of enrollment is required"),
     faculty: z.string().min(1, "Faculty is required"),
-    departement: z.string().min(1, "Department is required"),
+    major: z.string().min(1, "Major is required"),
     class: z.string().min(1, "Class is required"),
     note: z.boolean().refine((value) => value === true, {
       message: "You have to select the checkbox.",
@@ -68,12 +68,12 @@ export default function GeneralQuestionForm() {
         return response.json();
       })
       .then((responseData) => {
-        // console.log('API response:', responseData);
+        console.log('API response:', responseData);
         window.alert('Your form has been submitted.');
         window.location.href = '/';
       })
       .catch((error) => {
-        // console.error('Error submitting form:', error);
+        console.error('Error submitting form:', error);
         window.alert('Error submitting form. Please try again.');
       });
 
@@ -221,10 +221,10 @@ export default function GeneralQuestionForm() {
               <div className="mb-8 mt-8">
                 <FormField
                   control={form.control}
-                  name="departement"
+                  name="major"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Departement</FormLabel>
+                      <FormLabel>Major</FormLabel>
                       <FormControl>
                         <Input placeholder="Ex : S1 Teknik Telekomunikasi" {...field} />
                       </FormControl>
