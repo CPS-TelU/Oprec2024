@@ -66,10 +66,9 @@ export default function GeneralQuestionForm() {
       entry_year: formData.year_of_enrollment, // Assuming 'year_of_enrollment' corresponds to 'entry_year'
       document: formData.document,
     };
-    // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
-    const apiUrl = "https://cyberrecruitment.vercel.app/participant";
-
-    fetch(apiUrl, {
+    
+    const apiUrl = "https://cyberrecruitment.vercel.app/participant" ;
+    await fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -324,7 +323,7 @@ export default function GeneralQuestionForm() {
                     <br />
                     e. Essay
                     <br />
-                    d. Twibbon Post in Instagram 
+                    d. Twibbon Post in Instagram
                     <div className="text-blue-500">
                       <Link
                         href="https://www.tokopedia.com/cncstorebandung/cnc-breadboard-mb-102-solderless-830-830p?extParam=whid%3D15512"
@@ -334,7 +333,8 @@ export default function GeneralQuestionForm() {
                       </Link>
                     </div>
                     <br />
-                    For more detailed information, please refer to the homepage of this website.
+                    For more detailed information, please refer to the homepage
+                    of this website.
                   </AlertDescription>
                 </Alert>
               </div>

@@ -30,7 +30,7 @@ const Partner = () => {
     {
       src: "/partner/daskom.png",
       href: "https://www.instagram.com/telu.daskom/",
-    },
+    },//ga ada
     {
       src: "/partner/tekdig.jpg",
       href: "https://www.instagram.com/tekdig.telu/",
@@ -46,11 +46,9 @@ const Partner = () => {
     {
       src: "/partner/dsp.jpg",
       href: "https://www.instagram.com/dsp.laboratory/",
-    },
-    { src: "/partner/mbc.png", href: "https://www.instagram.com/mbclab/" },
-    {
-      src: "/partner/sisjar.jpg",
-      href: "https://www.instagram.com/sisjarlab/",
+    },//ga ada
+    { src: "/partner/mbc.png", 
+      href: "https://www.instagram.com/mbclab/" 
     },
     {
       src: "/partner/adaptive.png",
@@ -63,7 +61,7 @@ const Partner = () => {
     {
       src: "/partner/Nanosatellite.png",
       href: "https://www.instagram.com/isatellitesociety/",
-    },
+    },//ga ada
     {
       src: "/partner/aicoms.png",
       href: "https://www.instagram.com/aicoms.telkomuniv/",
@@ -72,11 +70,13 @@ const Partner = () => {
       src: "/partner/elektronika.jpg",
       href: "https://www.instagram.com/electronicslaboratory/",
     },
-    { src: "/partner/upci.png", href: "https://www.instagram.com/upcilab/" },
+    { src: "/partner/upci.png", 
+      href: "https://www.instagram.com/upcilab/" 
+    },//ga ada
     {
       src: "/partner/mobcomm.png",
       href: "https://www.instagram.com/mobilecommlaboratory/",
-    },
+    },//ga ada
   ];
   const [ref, inView] = useInView({
     triggerOnce: false, // Change this to false if you want the animation to trigger again whenever the element comes into view
