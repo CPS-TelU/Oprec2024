@@ -43,7 +43,7 @@ const Berkas = () => {
             className="collapse-title text-[17px] font-viga font-regular"
             style={{ color: "#f4f4f4" }}
           >
-            CV ATS is a PLUS
+            CV in ATS-Friendly Format
           </div>
           <div
             className="collapse-content"

@@ -3,13 +3,28 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import * as z from "zod";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { FileUp } from "lucide-react";
+import Link from "next/link";
 
 const FormSchema = z
   .object({
@@ -55,26 +70,26 @@ export default function GeneralQuestionForm() {
     const apiUrl = "https://cyberrecruitment.vercel.app/participant";
 
     fetch(apiUrl, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(apiFormData),
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
       .then((responseData) => {
-        console.log('API response:', responseData);
-        window.alert('Your form has been submitted.');
-        window.location.href = '/';
+        console.log("API response:", responseData);
+        window.alert("Your form has been submitted.");
+        window.location.href = "/";
       })
       .catch((error) => {
-        console.error('Error submitting form:', error);
-        window.alert('Error submitting form. Please try again.');
+        console.error("Error submitting form:", error);
+        window.alert("Error submitting form. Please try again.");
       });
 
     await fetch("/api/send", {
@@ -84,10 +99,9 @@ export default function GeneralQuestionForm() {
       },
       body: JSON.stringify({
         email: formData.email,
-        firstName : formData.name
+        firstName: formData.name,
       }),
-    })
-    ;
+    });
   }
   return (
     <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
@@ -95,7 +109,10 @@ export default function GeneralQuestionForm() {
         <div className="w-1/2 md:w-56 lg:w-64"></div>
         <div className="flex mx-auto p-3 mb-20 lg:mb-24">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-sm w-full lg:scale-110">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="max-w-sm w-full lg:scale-110"
+            >
               <div className="mb-8 mt-8">
                 <FormField
                   control={form.control}
@@ -120,7 +137,10 @@ export default function GeneralQuestionForm() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="Ex : example@gmail.com" {...field} />
+                        <Input
+                          placeholder="Ex : example@gmail.com"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -137,7 +157,11 @@ export default function GeneralQuestionForm() {
                       <FormItem>
                         <FormLabel>Whastapp Number</FormLabel>
                         <FormControl>
-                          <Input className="size-20px" placeholder="Ex : 0869420666" {...field} />
+                          <Input
+                            className="size-20px"
+                            placeholder="Ex : 0869420666"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -151,7 +175,10 @@ export default function GeneralQuestionForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Gender</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
                           <FormControl>
                             <SelectTrigger className="w-[180px]">
                               <SelectValue placeholder="Select an Option" />
@@ -177,7 +204,10 @@ export default function GeneralQuestionForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Faculty</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
                           <FormControl>
                             <SelectTrigger className="w-[167px] md:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
@@ -185,7 +215,9 @@ export default function GeneralQuestionForm() {
                           </FormControl>
                           <SelectContent>
                             <SelectItem value="FTE">TEKNIK ELEKTRO</SelectItem>
-                            <SelectItem value="FRI">REKAYASA INDUSTRI</SelectItem>
+                            <SelectItem value="FRI">
+                              REKAYASA INDUSTRI
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -200,7 +232,10 @@ export default function GeneralQuestionForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Year of enrollment</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
                           <FormControl>
                             <SelectTrigger className="w-[167px] md:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
@@ -226,7 +261,10 @@ export default function GeneralQuestionForm() {
                     <FormItem>
                       <FormLabel>Major</FormLabel>
                       <FormControl>
-                        <Input placeholder="Ex : S1 Teknik Telekomunikasi" {...field} />
+                        <Input
+                          placeholder="Ex : S1 Teknik Telekomunikasi"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -268,6 +306,40 @@ export default function GeneralQuestionForm() {
               </div>
 
               <div className="mb-8">
+                <Alert>
+                  <FileUp className="h-4 w-4" />
+                  <AlertTitle>Attention!</AlertTitle>
+                  <AlertDescription>
+                    Ensure that all recruitment documents are in accordance with
+                    the terms and conditions, such as:
+                    <br />
+                    a. CV in ATS-Friendly Format
+                    <br />
+                    b. Formal Photo 4x6 & Portfolio (if there is one, it's
+                    better)
+                    <br />
+                    c. Self Description
+                    <br />
+                    d. Motivation Letter
+                    <br />
+                    e. Essay
+                    <br />
+                    d. Twibbon Post in Instagram 
+                    <div className="text-blue-500">
+                      <Link
+                        href="https://www.tokopedia.com/cncstorebandung/cnc-breadboard-mb-102-solderless-830-830p?extParam=whid%3D15512"
+                        target="_blank"
+                      >
+                        (Link Twibbon)
+                      </Link>
+                    </div>
+                    For more detailed information, please refer to the homepage
+                    of this website.
+                  </AlertDescription>
+                </Alert>
+              </div>
+
+              <div className="mb-8">
                 <FormField
                   control={form.control}
                   name="document"
@@ -275,7 +347,10 @@ export default function GeneralQuestionForm() {
                     <FormItem>
                       <FormLabel>Document</FormLabel>
                       <FormControl>
-                        <Input placeholder="Ex : https://drive.google.com/file/d/.../view?usp=sharing" {...field} />
+                        <Input
+                          placeholder="Ex : https://drive.google.com/file/d/.../view?usp=sharing"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -286,33 +361,13 @@ export default function GeneralQuestionForm() {
               <div className="mb-8">
                 <Alert variant="destructive">
                   <AlertTitle>Warning</AlertTitle>
-                  <AlertDescription>Ensure that the document link you{'\u0027'}ve submitted is accessible to the public. Set general access to anyone with the link</AlertDescription>
-                </Alert>
-              </div>
-
-              <div className="mb-8">
-                <Alert>
-                  <FileUp className="h-4 w-4" />
-                  <AlertTitle>Attention!</AlertTitle>
                   <AlertDescription>
-                    Ensure that all recruitment documents are in accordance with the terms and conditions, such as:
-                    <br />
-                    a. Creative CV
-                    <br />
-                    b. Full Body Photo
-                    <br />
-                    c. Self Description
-                    <br />
-                    d. Vision, Mission, and Motivation
-                    <br />
-                    e. Essay
-                    <br />
-                    <br />
-                    For more detailed information, please refer to the homepage of this website.
+                    Ensure that the document link you{"\u0027"}ve submitted is
+                    accessible to the public. Set general access to anyone with
+                    the link
                   </AlertDescription>
                 </Alert>
               </div>
-
               <div className="items-top flex space-x-2 mb-8">
                 <FormField
                   control={form.control}
@@ -320,10 +375,16 @@ export default function GeneralQuestionForm() {
                   render={({ field }) => (
                     <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                       <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} required />
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          required
+                        />
                       </FormControl>
                       <div className="space-y-1 leading-none">
-                        <FormLabel>I have filled in all the required data.</FormLabel>
+                        <FormLabel>
+                          I have filled in all the required data.
+                        </FormLabel>
                       </div>
                       <FormMessage />
                     </FormItem>
