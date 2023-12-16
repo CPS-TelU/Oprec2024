@@ -180,7 +180,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[180px]">
+                            <SelectTrigger className="w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -209,7 +209,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[167px] md:w-[193px]">
+                            <SelectTrigger className="w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -237,7 +237,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[167px] md:w-[193px]">
+                            <SelectTrigger className="w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -308,7 +308,7 @@ export default function GeneralQuestionForm() {
               <div className="mb-8">
                 <Alert>
                   <FileUp className="h-4 w-4" />
-                  <AlertTitle>Attention!</AlertTitle>
+                  <AlertTitle>Attention !!</AlertTitle>
                   <AlertDescription>
                     Ensure that all recruitment documents are in accordance with
                     the terms and conditions, such as:
@@ -330,11 +330,11 @@ export default function GeneralQuestionForm() {
                         href="https://www.tokopedia.com/cncstorebandung/cnc-breadboard-mb-102-solderless-830-830p?extParam=whid%3D15512"
                         target="_blank"
                       >
-                        (Link Twibbon)
+                        🔗Link Twibbon
                       </Link>
                     </div>
-                    For more detailed information, please refer to the homepage
-                    of this website.
+                    <br />
+                    For more detailed information, please refer to the homepage of this website.
                   </AlertDescription>
                 </Alert>
               </div>

@@ -79,7 +79,7 @@ const Partner = () => {
     },
   ];
   const [ref, inView] = useInView({
-    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever the element comes into view
+    triggerOnce: false, // Change this to false if you want the animation to trigger again whenever the element comes into view
   });
   return (
     <div className={styles.partnerArea} id="partner">
@@ -89,7 +89,8 @@ const Partner = () => {
           style={{
             color: "#231f20",
             opacity: inView ? 1 : 0,
-            transition: "opacity 2.5s",
+            transform: inView ? "translateY(0)" : "translateY(-20%)",
+            transition: "transform 2s, opacity 2.5s",
           }}
           className="hidden lg:flex justify-center text-3xl font-viga font-regular mb-16"
         >
@@ -103,52 +104,57 @@ const Partner = () => {
         >
           ❯ Our Media Partner ❮
         </h1>
-        <div className="md:hidden">
-          <div className="flex flex-wrap ">
-            <div className="pr-4 pl-4">
-              <div className={styles.partnerWrap}>
-                <ul className={styles.partnerWrapUl}>
-                  {partners_list.map((item, index) => (
-                    <li key={index} className={styles.partnerWrapUlLi}>
-                      <a href={item.href}>
-                        <Image
-                          src={item.src}
-                          alt={"partner"}
-                          width={70}
-                          height={70}
-                          className={styles.partnerWrapUlLiImg}
-                        />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
+        {/* PARTNER SMALL SCREEN */}
+
+        <div className="flex flex-wrap md:hidden">
+          <div className="pr-4 pl-4">
+            <div className={styles.partnerWrap}>
+              <ul className={styles.partnerWrapUl}>
+                {partners_list.map((item, index) => (
+                  <li key={index} className={styles.partnerWrapUlLi}>
+                    <a href={item.href}>
+                      <Image
+                        src={item.src}
+                        alt={"partner"}
+                        width={70}
+                        height={70}
+                        className={styles.partnerWrapUlLiImg}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-        <div className="hidden md:block lg:hidden">
-          <div className="flex flex-wrap ">
-            <div className="w-full pr-4 pl-4">
-              <div className={styles.partnerWrap}>
-                <ul className={styles.partnerWrapUl}>
-                  {partners_list.map((item, index) => (
-                    <li key={index} className={styles.partnerWrapUlLi}>
-                      <a href={item.href}>
-                        <Image
-                          src={item.src}
-                          alt={"partner"}
-                          width={100}
-                          height={100}
-                          className={styles.partnerWrapUlLiImg}
-                        />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
+        {/* PARTNER MD SCREEN */}
+
+        <div className="hidden md:flex flex-wrap lg:hidden">
+          <div className="w-full pr-4 pl-4">
+            <div className={styles.partnerWrap}>
+              <ul className={styles.partnerWrapUl}>
+                {partners_list.map((item, index) => (
+                  <li key={index} className={styles.partnerWrapUlLi}>
+                    <a href={item.href}>
+                      <Image
+                        src={item.src}
+                        alt={"partner"}
+                        width={100}
+                        height={100}
+                        className={styles.partnerWrapUlLiImg}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
+
+        {/* PARTNER LARGE & ABOVE SCREEN */}
+
         <div
           ref={ref}
           style={{
@@ -156,27 +162,25 @@ const Partner = () => {
             opacity: inView ? 1 : 0,
             transition: "transform 2s, opacity 1s",
           }}
-          className="hidden lg:block"
+          className="hidden lg:flex flex-wrap"
         >
-          <div className="flex flex-wrap">
-            <div className="w-full pr-4 pl-4">
-              <div className={styles.partnerWrap}>
-                <ul className={styles.partnerWrapUl}>
-                  {partners_list.map((item, index) => (
-                    <li key={index} className={styles.partnerWrapUlLi}>
-                      <a href={item.href}>
-                        <Image
-                          src={item.src}
-                          alt={"partner"}
-                          width={110}
-                          height={110}
-                          className={styles.partnerWrapUlLiImg}
-                        />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="w-full pr-4 pl-4">
+            <div className={styles.partnerWrap}>
+              <ul className={styles.partnerWrapUl}>
+                {partners_list.map((item, index) => (
+                  <li key={index} className={styles.partnerWrapUlLi}>
+                    <a href={item.href}>
+                      <Image
+                        src={item.src}
+                        alt={"partner"}
+                        width={110}
+                        height={110}
+                        className={styles.partnerWrapUlLiImg}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

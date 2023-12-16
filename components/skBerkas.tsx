@@ -13,7 +13,7 @@ const Skberkas = () => {
     }
   };
   const [ref, inView] = useInView({
-    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever the element comes into view
+    triggerOnce: false, // Change this to false if you want the animation to trigger again whenever the element comes into view
   });
 
   return (
@@ -24,7 +24,8 @@ const Skberkas = () => {
         style={{
           color: "#231f20",
           opacity: inView ? 1 : 0,
-          transition: "opacity 2.5s",
+          transform: inView ? "translateY(0)" : "translateY(-20%)",
+          transition: "transform 2s, opacity 2.5s",
         }}
       >
         ❯ Requirement ❮

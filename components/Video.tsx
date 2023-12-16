@@ -5,7 +5,6 @@ import Timer from "./Timer";
 import bgImage from "@/public/Landing.png";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import { preload } from "react-dom";
 
 const Video: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);

@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import RegistrationButton from "./ui/registration-button";
 import { useGlobalContext } from "@/app/context/timeleft";
+import Image from "next/image";
+import NavImage from "@/public/Logo CPS.png";
 
 const slot = 1;
 
@@ -47,12 +48,18 @@ const NavHome = () => {
         <div className="navbar-start md:ml-2 lg:ml-5 ">
           <div className="hidden lg:flex flex-row items-center">
             <a
-              className="font-viga font-bold mt-1 mx-5 text-[24px]"
+              className="font-viga font-bold -mt-2 -ml-5 text-[24px]"
               style={{ color: "#ba2025" }}
               href="/"
               rel="noopener noreferrer"
             >
-              CYBER RECRUITMENT
+              <Image
+                src={NavImage}
+                alt="Background Image"
+                width={400}
+                height={200}
+              />
+              {/* CYBER RECRUITMENT */}
             </a>
           </div>
           <div className="drawer lg:hidden">
@@ -116,11 +123,11 @@ const NavHome = () => {
                       fontSmooth: "true",
                       offset: "-100",
                       animationDuration: "500",
-                      whiteSpace: 'nowrap'
+                      whiteSpace: "nowrap",
                     }}
                   >
                     {timeleft == "" ? (
-                      "Loading"
+                      "Register"
                     ) : hours < 0 ||
                       minutes < 0 ||
                       seconds < 0 ||
@@ -139,16 +146,6 @@ const NavHome = () => {
                     duration={500}
                   >
                     <button>About</button>
-                  </ScrollLink>
-                </li>
-                <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px]">
-                  <ScrollLink
-                    to="benefit"
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                  >
-                    <button>Benefit</button>
                   </ScrollLink>
                 </li>
                 {/* <li className="font-plus-jakarta-sans font-semibold text-[17px] md:text-[18px]">
@@ -206,12 +203,9 @@ const NavHome = () => {
           </a>
         </div>
         {/* NAVBAR END */}
-        <div
-          className="navbar-end"
-          style={{ color: "#231f20" }}
-        >
+        <div className="navbar-end" style={{ color: "#231f20" }}>
           <div
-            className="hidden lg:block items-center justify-end mr-5 -mt-[1px] text-[17px] lg:text-[20px]"
+            className="hidden lg:block items-center justify-end mr-16 -mt-[1px] text-[17px] lg:text-[20px]"
             style={{ color: "#231f20" }}
           >
             <ul className="flex space-x-6 gap-2">
@@ -223,16 +217,6 @@ const NavHome = () => {
                   duration={500}
                 >
                   <button>About</button>
-                </ScrollLink>
-              </li>
-              <li className="font-plus-jakarta-sans font-semibold text-[18px]">
-                <ScrollLink
-                  to="benefit"
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                >
-                  <button>Benefit</button>
                 </ScrollLink>
               </li>
               {/* <li className="font-plus-jakarta-sans font-semibold text-[18px]">
@@ -262,7 +246,9 @@ const NavHome = () => {
                   offset={-100}
                   duration={500}
                 >
-                  <button style={{whiteSpace: 'nowrap'}}>Media Partner</button>
+                  <button style={{ whiteSpace: "nowrap" }}>
+                    Media Partner
+                  </button>
                 </ScrollLink>
               </li>
               <li className="font-plus-jakarta-sans font-semibold text-[18px]">
@@ -274,9 +260,9 @@ const NavHome = () => {
                     animationDuration: "500",
                   }}
                 >
-                  <button style={{whiteSpace: 'nowrap'}}>
+                  <button style={{ whiteSpace: "nowrap" }}>
                     {timeleft == "" ? (
-                      "Loading"
+                      "Register"
                     ) : hours < 0 ||
                       minutes < 0 ||
                       seconds < 0 ||
