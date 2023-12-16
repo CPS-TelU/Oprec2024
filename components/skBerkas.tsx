@@ -52,10 +52,12 @@ const Skberkas = () => {
             className="list-decimal ml-10 space-y-2 mx-auto text-base font-plus-jakarta-sans font-semibold leading-relaxed text-[19px] lg:text-[20px] lg:space-y-4"
             style={{ color: "#231f20" }}
           >
-            <li className="">Fear to the One God</li>
+            <li className="">Believe in The One Almighty God</li>
             <li className="">An Active Student of Telkom University</li>
             <li className="">Student of FTE and FRI Batch 2021,2022, 2023</li>
-            <li className="">Have Motivation and High Spirit in Learning</li>
+            <li className="">Logic & Critical Thinking</li>
+            <li className="">BASIC Programming IS PLUS</li>
+            <li className="">Interest in Software Development area</li>
           </ol>
         </div>
         <div className="w-1/2 ">
@@ -74,14 +76,14 @@ const Skberkas = () => {
                 className="collapse-title text-[17px] font-viga font-regular"
                 style={{ color: "#f4f4f4" }}
               >
-                Creative CV
+                CV ATS is a PLUS
               </div>
               <div
                 className="collapse-content"
                 style={{ backgroundColor: "#f4f4f4", color: "#231f20" }}
               >
                 <p className="mt-5 font-plus-jakarta-sans font-semibold">
-                  Creative Curriculum Vitae (CV) reflecting your educational
+                  Curriculum Vitae (CV) reflecting your educational
                   background, experience, and skills.
                 </p>
               </div>
@@ -100,7 +102,7 @@ const Skberkas = () => {
                 className="collapse-title text-[17px] font-viga font-regular"
                 style={{ color: "#f4f4f4" }}
               >
-                Full Body Photo
+                 Formal Photo 4x6 & Portfolio (if there is one, it's better)
               </div>
               <div
                 className="collapse-content"
@@ -153,15 +155,14 @@ const Skberkas = () => {
                 className="collapse-title text-[17px] font-viga font-regular"
                 style={{ color: "#f4f4f4" }}
               >
-                Vision, Mission, and Motivation
+                Motivation Letter
               </div>
               <div
                 className="collapse-content"
                 style={{ backgroundColor: "#f4f4f4", color: "#231f20" }}
               >
                 <p className="mt-5 font-plus-jakarta-sans font-semibold">
-                  Your vision, mission, and motivation for joining the Cyber
-                  Academy.
+                Your motivation for becoming an assistant.
                 </p>
               </div>
             </div>
@@ -189,10 +190,12 @@ const Skberkas = () => {
                   Essay on one of the following topics:
                 </p>
                 <ol className="list-decimal font-plus-jakarta-sans font-regular text-gray-900 text-2 mt-2 ml-4">
-                  <li>Cyber Physical System</li>
-                  <li>Embedded System</li>
-                  <li>Internet of Things</li>
-                  <li>Web Development</li>
+                  <li>Routing Protocol</li>
+                  <li>Linux Environment</li>
+                  <li>IoT Protocol and Connectivity</li>
+                  <li>Cloud Computing</li>
+                  <li>Software Development (Web/App)</li>
+                  <li>AIoT (Artificial Intelligence IoT)</li>
                 </ol>
               </div>{" "}
             </div>

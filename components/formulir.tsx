@@ -38,7 +38,19 @@ export default function GeneralQuestionForm() {
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     const { note, ...formData } = data;
-
+    const apiFormData = {
+      id: 5, // Replace with the appropriate value for your use case
+      name: formData.name,
+      nim: formData.nim,
+      class: formData.class,
+      major: formData.major,
+      email: formData.email,
+      faculty: formData.faculty,
+      gender: formData.gender,
+      phone_number: formData.phone_number,
+      entry_year: formData.year_of_enrollment, // Assuming 'year_of_enrollment' corresponds to 'entry_year'
+      document: formData.document,
+    };
     // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
     const apiUrl = "https://cyberrecruitment.vercel.app/participant";
 
@@ -47,7 +59,7 @@ export default function GeneralQuestionForm() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(apiFormData),
     })
       .then((response) => {
         if (!response.ok) {
