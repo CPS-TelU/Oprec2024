@@ -38,10 +38,12 @@ const ContentSplit: React.FC = () => {
             Terms and Conditions
           </h2>
           <ol className="list-decimal pl-4 ml-4 space-y-2 mx-auto font-plus-jakarta-sans font-semibold text-base leading-relaxed text-[14.5px]">
-            <li className="">Fear to the One God</li>
+            <li className="">Believe in The One Almighty God</li>
             <li className="">An Active Student of Telkom University</li>
-            <li className="">Student of FTE and FRI Batch 2021 & 2022</li>
-            <li className="">Have Motivation and High Spirit in Learning</li>
+            <li className="">Student of FTE and FRI Batch 2021,2022, 2023</li>
+            <li className="">Logic & Critical Thinking</li>
+            <li className="">BASIC Programming IS PLUS</li>
+            <li className="">Interest in Software Development area</li>
           </ol>
         </div>
       </div>

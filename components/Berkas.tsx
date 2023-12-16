@@ -43,15 +43,15 @@ const Berkas = () => {
             className="collapse-title text-[17px] font-viga font-regular"
             style={{ color: "#f4f4f4" }}
           >
-            Creative CV
+            CV ATS is a PLUS
           </div>
           <div
             className="collapse-content"
             style={{ backgroundColor: "#f4f4f4", color: "#231f20" }}
           >
             <p className="mt-5 font-plus-jakarta-sans font-semibold">
-              Creative Curriculum Vitae (CV) reflecting your educational
-              background, experience, and skills.
+              Curriculum Vitae (CV) reflecting your educational background,
+              experience, and skills.
             </p>
           </div>
         </div>
@@ -69,7 +69,7 @@ const Berkas = () => {
             className="collapse-title text-[17px] font-viga font-regular"
             style={{ color: "#f4f4f4" }}
           >
-            Full Body Photo
+            Formal Photo 4x6 & Portfolio (if there is one, it's better)
           </div>
           <div
             className="collapse-content"
@@ -121,15 +121,14 @@ const Berkas = () => {
             className="collapse-title text-[17px] font-viga font-regular"
             style={{ color: "#f4f4f4" }}
           >
-            Vision, Mission, and Motivation
+            Motivation Letter
           </div>
           <div
             className="collapse-content"
             style={{ backgroundColor: "#f4f4f4", color: "#231f20" }}
           >
             <p className="mt-5 font-plus-jakarta-sans font-semibold">
-              Your vision, mission, and motivation for joining the Cyber
-              Academy.
+              Your motivation for becoming an assistant.
             </p>
           </div>
         </div>
@@ -157,10 +156,12 @@ const Berkas = () => {
               Essay on one of the following topics:
             </p>
             <ol className="list-decimal font-plus-jakarta-sans font-regular text-gray-900 text-2 mt-2 ml-4">
-              <li>Cyber Physical System</li>
-              <li>Embedded System</li>
-              <li>Internet of Things</li>
-              <li>Web Development</li>
+              <li>Routing Protocol</li>
+              <li>Linux Environment</li>
+              <li>IoT Protocol and Connectivity</li>
+              <li>Cloud Computing</li>
+              <li>Software Development (Web/App)</li>
+              <li>AIoT (Artificial Intelligence IoT)</li>
             </ol>
           </div>
         </div>
