@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const Berkas = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -51,7 +52,10 @@ const Berkas = () => {
           >
             <p className="mt-5 font-plus-jakarta-sans font-semibold">
               Curriculum Vitae (CV) reflecting your educational background,
-              experience, and skills.
+              experience, and skills.<br />
+              <Link href="https://drive.google.com/file/d/1zaVxmaSS8HRxb9tKd6Yw8Cv2sKUELHJR/view?usp=drivesdk" target="_blank">
+                🔗Link Contoh CV ATS
+              </Link>
             </p>
           </div>
         </div>
@@ -77,7 +81,10 @@ const Berkas = () => {
           >
             <p className="mt-5 font-plus-jakarta-sans font-semibold">
               If wearing a hijab, use a square scarf, and if not, tie your hair
-              neatly.
+              neatly.<br />
+              <Link href="https://drive.google.com/file/d/175IXyCm0MqK78dpRcuE8gFbvKOg06S6V/view?usp=drivesdk" target="_blank">
+                🔗Link Contoh Formal Photo
+            </Link>
             </p>
           </div>
         </div>
@@ -155,7 +162,10 @@ const Berkas = () => {
             style={{ backgroundColor: "#f4f4f4", color: "#231f20" }}
           >
             <p className="mt-5 font-plus-jakarta-sans font-semibold">
-              Your motivation for becoming an assistant.
+              Your motivation for becoming an assistant.<br />
+              <Link href="https://drive.google.com/file/d/1LynFik_Kq7a7fy-FJLHeaZTV9Atlct1b/view?usp=drivesdk" target="_blank">
+                🔗Link Contoh Motivation Letter
+            </Link>
             </p>
           </div>
         </div>

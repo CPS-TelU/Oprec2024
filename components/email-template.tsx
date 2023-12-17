@@ -50,7 +50,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ firstNam
                 
 
                 <Text style={paragraph}>
-                Please join our dedicated WLine group to stay in the loop and connect with fellow participants. Be on the lookout for upcoming updates and information.
+                Please join our dedicated Line group to stay in the loop and connect with fellow participants. Be on the lookout for upcoming updates and information.
                 </Text>
               </Column>
             </Row>

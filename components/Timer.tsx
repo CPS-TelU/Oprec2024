@@ -28,7 +28,6 @@ const Timer = () => {
 
   useEffect(() => {
     const countdownInterval = setInterval(() => {
-      console.log(targetDateWIB);
       const timeDifference = Math.floor((targetDateWIB.getTime() - Date.now()) / 1000);
       setCountdown(timeDifference > 0 ? timeDifference : 0);
       const { days, hours, minutes, seconds } = calculateTimeRemaining(timeDifference);

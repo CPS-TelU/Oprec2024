@@ -105,8 +105,9 @@ export default function GeneralQuestionForm() {
       }
 
       console.log("Send API response:", sendData);
-
-      window.alert("Your form has been submitted.");
+      window.alert(
+        "Your form has been submitted," + "\n" + "Please check your email."
+      );
       window.location.href = "/";
     } catch (error) {
       // Handle errors
@@ -226,8 +227,8 @@ export default function GeneralQuestionForm() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem  value="FTE">TEKNIK ELEKTRO</SelectItem>
-                            <SelectItem  value="FRI">
+                            <SelectItem value="FTE">TEKNIK ELEKTRO</SelectItem>
+                            <SelectItem value="FRI">
                               REKAYASA INDUSTRI
                             </SelectItem>
                           </SelectContent>
@@ -326,22 +327,44 @@ export default function GeneralQuestionForm() {
                     the terms and conditions, such as:
                     <br />
                     a. CV in ATS-Friendly Format
-                    <br />
+                    <div className="text-blue-500">
+                      <Link
+                        href="https://drive.google.com/file/d/1zaVxmaSS8HRxb9tKd6Yw8Cv2sKUELHJR/view?usp=drivesdk"
+                        target="_blank"
+                      >
+                        🔗Link Contoh CV ATS
+                      </Link>
+                    </div>
                     b. Formal Photo 4x6 & Portfolio (if there is one, it&apos;s
                     better)
-                    <br />
+                    <div className="text-blue-500">
+                      <Link
+                        href="https://drive.google.com/file/d/175IXyCm0MqK78dpRcuE8gFbvKOg06S6V/view?usp=drivesdk"
+                        target="_blank"
+                      >
+                        🔗Link Contoh Formal Photo
+                      </Link>
+                    </div>
                     c. KSM & KHS
                     <br />
                     d. Self Description
                     <br />
                     e. Motivation Letter
-                    <br />
+                    <div className="text-blue-500">
+                      <Link
+                        href="https://drive.google.com/file/d/1LynFik_Kq7a7fy-FJLHeaZTV9Atlct1b/view?usp=drivesdk"
+                        target="_blank"
+                      >
+                        🔗Link Contoh Motivation Letter
+                      </Link>
+                    </div>
+  
                     f. Essay
                     <br />
                     g. Twibbon Post in Instagram
                     <div className="text-blue-500">
                       <Link
-                        href="https://www.tokopedia.com/cncstorebandung/cnc-breadboard-mb-102-solderless-830-830p?extParam=whid%3D15512"
+                        href="https://twb.nz/cyberrecruitment2324"
                         target="_blank"
                       >
                         🔗Link Twibbon
