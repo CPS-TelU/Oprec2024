@@ -50,13 +50,13 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ firstNam
                 
 
                 <Text style={paragraph}>
-                Please join our dedicated WhatsApp group to stay in the loop and connect with fellow participants. Be on the lookout for upcoming updates and information.
+                Please join our dedicated WLine group to stay in the loop and connect with fellow participants. Be on the lookout for upcoming updates and information.
                 </Text>
               </Column>
             </Row>
             <Row style={{ ...boxInfos, paddingTop: '0' }}>
               <Column style={containerButton} colSpan={2}>
-                <Button style={button} href="https://airbnb.com/">Whatsapp Group</Button>
+                <Button style={button} href="https://line.me/ti/g/WcY-6WwUOD">Line Group</Button>
               </Column>
             </Row>
           </Section>
