@@ -58,8 +58,7 @@ const Skberkas = () => {
             <li className="">An Active Student of Telkom University</li>
             <li className="">Student of FTE and FRI Batch 2021,2022, 2023</li>
             <li className="">Logic & Critical Thinking</li>
-            <li className="">BASIC Programming IS PLUS</li>
-            <li className="">Interest in Software Development area</li>
+            <li className="">BASIC Programming is a plus</li>
           </ol>
         </div>
         <div className="w-1/2 ">
@@ -236,7 +235,7 @@ const Skberkas = () => {
                   <li>IoT Protocol and Connectivity</li>
                   <li>Cloud Computing</li>
                   <li>Software Development (Web/App)</li>
-                  <li>AIoT (Artificial Intelligence IoT)</li>
+                  <li>AIoT (Artificial Intelligence of Things)</li>
                 </ol>
               </div>{" "}
             </div>

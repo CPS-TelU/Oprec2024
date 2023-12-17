@@ -195,7 +195,7 @@ const Berkas = () => {
               <li>IoT Protocol and Connectivity</li>
               <li>Cloud Computing</li>
               <li>Software Development (Web/App)</li>
-              <li>AIoT (Artificial Intelligence IoT)</li>
+              <li>AIoT (Artificial Intelligence of Things)</li>
             </ol>
           </div>
         </div>
