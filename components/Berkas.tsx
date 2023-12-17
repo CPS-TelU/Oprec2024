@@ -81,10 +81,7 @@ const Berkas = () => {
           >
             <p className="mt-5 font-plus-jakarta-sans font-semibold">
               If wearing a hijab, use a square scarf, and if not, tie your hair
-              neatly.<br />
-              <Link href="https://drive.google.com/file/d/175IXyCm0MqK78dpRcuE8gFbvKOg06S6V/view?usp=drivesdk" target="_blank">
-                🔗Link Contoh Formal Photo
-            </Link>
+              neatly.
             </p>
           </div>
         </div>

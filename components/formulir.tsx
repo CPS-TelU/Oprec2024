@@ -112,7 +112,7 @@ export default function GeneralQuestionForm() {
     } catch (error) {
       // Handle errors
       console.error("Error submitting form:", error);
-      window.alert("Error submitting form. Please try again.");
+      window.alert("The form can only be submitted once," + "\n" + "Make sure you're not using the same data.");;
     }
   }
 
@@ -337,14 +337,7 @@ export default function GeneralQuestionForm() {
                     </div>
                     b. Formal Photo 4x6 & Portfolio (if there is one, it&apos;s
                     better)
-                    <div className="text-blue-500">
-                      <Link
-                        href="https://drive.google.com/file/d/175IXyCm0MqK78dpRcuE8gFbvKOg06S6V/view?usp=drivesdk"
-                        target="_blank"
-                      >
-                        🔗Link Contoh Formal Photo
-                      </Link>
-                    </div>
+                    <br />
                     c. KSM & KHS
                     <br />
                     d. Self Description
