@@ -191,7 +191,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[193px]">
+                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -220,13 +220,13 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[193px]">
+                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="FTE">TEKNIK ELEKTRO</SelectItem>
-                            <SelectItem value="FRI">
+                            <SelectItem  value="FTE">TEKNIK ELEKTRO</SelectItem>
+                            <SelectItem  value="FRI">
                               REKAYASA INDUSTRI
                             </SelectItem>
                           </SelectContent>
@@ -248,7 +248,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[193px]">
+                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
