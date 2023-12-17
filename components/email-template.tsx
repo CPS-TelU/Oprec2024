@@ -25,8 +25,6 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ firstNam
       <Body style={main}>
         <Container>
           <Section style={content}>
-            <Img width={620} src={'/public/email-head.png'} />
-
             <Row style={{ ...boxInfos, paddingBottom: '0' }}>
               <Column>
                 <Heading
@@ -58,7 +56,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ firstNam
             </Row>
             <Row style={{ ...boxInfos, paddingTop: '0' }}>
               <Column style={containerButton} colSpan={2}>
-                <Button style={button} href="https://line.me/ti/g/WcY-6WwUOD">Line Group</Button>
+                <Button style={button} href="https://airbnb.com/">Whatsapp Group</Button>
               </Column>
             </Row>
           </Section>
