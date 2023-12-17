@@ -327,7 +327,7 @@ export default function GeneralQuestionForm() {
                     <br />
                     a. CV in ATS-Friendly Format
                     <br />
-                    b. Formal Photo 4x6 & Portfolio (if there is one, it's
+                    b. Formal Photo 4x6 & Portfolio (if there is one, it&apos;s
                     better)
                     <br />
                     c. Self Description

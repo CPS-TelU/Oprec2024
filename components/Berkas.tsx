@@ -69,7 +69,7 @@ const Berkas = () => {
             className="collapse-title text-[17px] font-viga font-regular"
             style={{ color: "#f4f4f4" }}
           >
-            Formal Photo 4x6 & Portfolio (if there is one, it's better)
+            Formal Photo 4x6 & Portfolio (if there is one, it&apos;s better)
           </div>
           <div
             className="collapse-content"
