@@ -1,7 +1,6 @@
 import VideoPlayer from "@/components/Videoplayer";
 import About from "@/components/About";
 import Course from "@/components/Course";
-import Benefit from "@/components/Benefit";
 import SdanK from "@/components/SyaratKetentuan";
 import Berkas from "@/components/Berkas";
 import Footer from "@/components/Footer";
@@ -23,9 +22,6 @@ export default function Home() {
       <div className="mb-12 md:mb-7">
         <About />
       </div>
-      {/* <div className="mb-20 md:mb-28 lg:mb-44">
-        <Benefit />
-      </div> */}
       {/* <div className="mb-20 md:mb-32 lg:mb-32">
         <Course />
       </div> */}

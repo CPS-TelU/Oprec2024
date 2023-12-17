@@ -24,10 +24,6 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ firstNam
       <Preview>Welcome to Cyber Recuitment 2024</Preview>
       <Body style={main}>
         <Container>
-          <Section style={logo}>
-            <Img src={'/public/email-logo.png'} />
-          </Section>
-
           <Section style={content}>
             <Img width={620} src={'/public/email-head.png'} />
 
@@ -62,7 +58,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ firstNam
             </Row>
             <Row style={{ ...boxInfos, paddingTop: '0' }}>
               <Column style={containerButton} colSpan={2}>
-                <Button style={button} href="https://airbnb.com/">Whatsapp Group</Button>
+                <Button style={button} href="https://line.me/ti/g/WcY-6WwUOD">Line Group</Button>
               </Column>
             </Row>
           </Section>

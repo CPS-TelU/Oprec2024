@@ -330,13 +330,15 @@ export default function GeneralQuestionForm() {
                     b. Formal Photo 4x6 & Portfolio (if there is one, it&apos;s
                     better)
                     <br />
-                    c. Self Description
+                    c. KSM & KHS
                     <br />
-                    d. Motivation Letter
+                    d. Self Description
                     <br />
-                    e. Essay
+                    e. Motivation Letter
                     <br />
-                    d. Twibbon Post in Instagram
+                    f. Essay
+                    <br />
+                    g. Twibbon Post in Instagram
                     <div className="text-blue-500">
                       <Link
                         href="https://www.tokopedia.com/cncstorebandung/cnc-breadboard-mb-102-solderless-830-830p?extParam=whid%3D15512"
