@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cyber Recruitment",
-  description: "Web Pendaftaran Cyber Recruitment by Cyber Physical System",
+  description: "Web Cyber Recruitment by Cyber Physical System",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

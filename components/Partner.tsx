@@ -11,7 +11,6 @@ const Partner = () => {
       src: "/partner/labrl.png",
       href: "https://www.instagram.com/rangkaianlistriklab/",
     },
-
     {
       src: "/partner/imv.png",
       href: "https://www.instagram.com/imv.laboratory/",
@@ -28,10 +27,10 @@ const Partner = () => {
       src: "/partner/elkom.jpg",
       href: "https://www.instagram.com/elkomlaboratory/",
     },
-    // {
-    //   src: "/partner/daskom.png",
-    //   href: "https://www.instagram.com/telu.daskom/",
-    // },//ga ada
+    {
+      src: "/partner/daskom.png",
+      href: "https://www.instagram.com/telu.daskom/",
+    },
     {
       src: "/partner/tekdig.jpg",
       href: "https://www.instagram.com/tekdig.telu/",
@@ -69,9 +68,9 @@ const Partner = () => {
       src: "/partner/elektronika.jpg",
       href: "https://www.instagram.com/electronicslaboratory/",
     },
-    // { src: "/partner/upci.png",
-    //   href: "https://www.instagram.com/upcilab/"
-    // },//ga ada
+    { src: "/partner/Siskom.png",
+      href: "https://www.instagram.com/labsiskom/"
+    },
     {
       src: "/partner/mobcomm.png",
       href: "https://www.instagram.com/mobilecommlaboratory/",
