@@ -42,8 +42,7 @@ const ContentSplit: React.FC = () => {
             <li className="">An Active Student of Telkom University</li>
             <li className="">Student of FTE and FRI Batch 2021,2022, 2023</li>
             <li className="">Logic & Critical Thinking</li>
-            <li className="">BASIC Programming IS PLUS</li>
-            <li className="">Interest in Software Development area</li>
+            <li className="">BASIC Programming is a plus</li>
           </ol>
         </div>
       </div>
