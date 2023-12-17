@@ -59,6 +59,7 @@ const Skberkas = () => {
             <li className="">Student of FTE and FRI Batch 2021,2022, 2023</li>
             <li className="">Logic & Critical Thinking</li>
             <li className="">BASIC Programming is a plus</li>
+            <li className="">Interested in Software Development area</li>
           </ol>
         </div>
         <div className="w-1/2 ">
