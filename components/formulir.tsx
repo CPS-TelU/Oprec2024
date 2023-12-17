@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -50,6 +50,7 @@ export default function GeneralQuestionForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
+
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       const { note, ...formData } = data;
@@ -66,10 +67,10 @@ export default function GeneralQuestionForm() {
         entry_year: formData.year_of_enrollment, // Assuming 'year_of_enrollment' corresponds to 'entry_year'
         document: formData.document,
       };
-  
+
       // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
-      const apiUrl = "https://cyberrecruitment.vercel.app/participant" ;
-  
+      const apiUrl = "https://cyberrecruitment.vercel.app/participant";
+
       // Send data to the participant endpoint
       const participantResponse = await fetch(apiUrl, {
         method: "POST",
@@ -78,14 +79,14 @@ export default function GeneralQuestionForm() {
         },
         body: JSON.stringify(apiFormData),
       });
-  
+
       if (!participantResponse.ok) {
         throw new Error("Network response was not ok");
       }
-  
+
       const participantData = await participantResponse.json();
       console.log("Participant API response:", participantData);
-  
+
       // Send data to the send endpoint
       const sendResponse = await fetch("/api/send", {
         method: "POST",
@@ -97,14 +98,14 @@ export default function GeneralQuestionForm() {
           firstName: formData.name,
         }),
       });
-  
+
+      const sendData = await sendResponse.json();
       if (!sendResponse.ok) {
         throw new Error("Network response was not ok");
       }
-  
-      const sendData = await sendResponse.json();
+
       console.log("Send API response:", sendData);
-  
+
       window.alert("Your form has been submitted.");
       window.location.href = "/";
     } catch (error) {
@@ -113,7 +114,7 @@ export default function GeneralQuestionForm() {
       window.alert("Error submitting form. Please try again.");
     }
   }
-  
+
   return (
     <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
       <div className="flex flex-col gap-2">
@@ -191,7 +192,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
+                            <SelectTrigger className="text-[12px] sm:text-[12px] w-[170px] sm:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -220,7 +221,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
+                            <SelectTrigger className="text-[12px] sm:text-[12px] w-[170px] sm:w-[172px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -248,7 +249,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
+                            <SelectTrigger className="text-[12px] sm:text-[12px] w-[170px] sm:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -326,16 +327,18 @@ export default function GeneralQuestionForm() {
                     <br />
                     a. CV in ATS-Friendly Format
                     <br />
-                    b. Formal Photo 4x6 & Portfolio (if there is one, it's
+                    b. Formal Photo 4x6 & Portfolio (if there is one, it&apos;s
                     better)
                     <br />
-                    c. Self Description
+                    c. KSM & KHS
                     <br />
-                    d. Motivation Letter
+                    d. Self Description
                     <br />
-                    e. Essay
+                    e. Motivation Letter
                     <br />
-                    d. Twibbon Post in Instagram
+                    f. Essay
+                    <br />
+                    g. Twibbon Post in Instagram
                     <div className="text-blue-500">
                       <Link
                         href="https://www.tokopedia.com/cncstorebandung/cnc-breadboard-mb-102-solderless-830-830p?extParam=whid%3D15512"
@@ -376,7 +379,10 @@ export default function GeneralQuestionForm() {
                   <AlertDescription>
                     Ensure that the document link you{"\u0027"}ve submitted is
                     accessible to the public. Set general access to anyone with
-                    the link
+                    the link <br />
+                    <br />* Pastikan bahwa tautan dokumen yang Anda kirimkan
+                    dapat diakses oleh publik. Tetapkan akses umum untuk siapa
+                    saja yang memiliki tautan tersebut*
                   </AlertDescription>
                 </Alert>
               </div>

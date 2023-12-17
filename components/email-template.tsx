@@ -24,13 +24,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ firstNam
       <Preview>Welcome to Cyber Recuitment 2024</Preview>
       <Body style={main}>
         <Container>
-          <Section style={logo}>
-            <Img src={'/public/email-logo.png'} />
-          </Section>
-
           <Section style={content}>
-            <Img width={620} src={'/public/email-head.png'} />
-
             <Row style={{ ...boxInfos, paddingBottom: '0' }}>
               <Column>
                 <Heading

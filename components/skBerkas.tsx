@@ -84,8 +84,8 @@ const Skberkas = () => {
                 style={{ backgroundColor: "#f4f4f4", color: "#231f20" }}
               >
                 <p className="mt-5 font-plus-jakarta-sans font-semibold">
-                  Curriculum Vitae (CV) reflecting your educational
-                  background, experience, and skills.
+                  Curriculum Vitae (CV) reflecting your educational background,
+                  experience, and skills.
                 </p>
               </div>
             </div>
@@ -103,7 +103,7 @@ const Skberkas = () => {
                 className="collapse-title text-[17px] font-viga font-regular"
                 style={{ color: "#f4f4f4" }}
               >
-                 Formal Photo 4x6 & Portfolio (if there is one, it's better)
+                Formal Photo 4x6 & Portfolio (if there is one, it&apos;s better)
               </div>
               <div
                 className="collapse-content"
@@ -121,9 +121,36 @@ const Skberkas = () => {
             >
               <input
                 type="radio"
-                name="my-accordion-3"
+                name="my-accordion-2"
                 onClick={() => handleAccordionClick(3)}
                 checked={activeAccordion === 3}
+              />
+              <div
+                className="collapse-title text-[17px] font-viga font-regular"
+                style={{ color: "#f4f4f4" }}
+              >
+                KSM & KHS
+              </div>
+              <div
+                className="collapse-content"
+                style={{ backgroundColor: "#f4f4f4", color: "#231f20" }}
+              >
+                <p className="mt-5 font-plus-jakarta-sans font-semibold">
+                  The latest semester transcript should include detailed course
+                  grades as well as formal evidence of the student's academic
+                  performance during the study period.
+                </p>
+              </div>
+            </div>
+            <div
+              className="collapse collapse-arrow join-item border border-base-300"
+              style={{ backgroundColor: "#ba2025" }}
+            >
+              <input
+                type="radio"
+                name="my-accordion-3"
+                onClick={() => handleAccordionClick(4)}
+                checked={activeAccordion === 4}
               />
               <div
                 className="collapse-title text-[17px] font-viga font-regular"
@@ -149,8 +176,8 @@ const Skberkas = () => {
               <input
                 type="radio"
                 name="my-accordion-4"
-                onClick={() => handleAccordionClick(4)}
-                checked={activeAccordion === 4}
+                onClick={() => handleAccordionClick(5)}
+                checked={activeAccordion === 5}
               />
               <div
                 className="collapse-title text-[17px] font-viga font-regular"
@@ -163,7 +190,7 @@ const Skberkas = () => {
                 style={{ backgroundColor: "#f4f4f4", color: "#231f20" }}
               >
                 <p className="mt-5 font-plus-jakarta-sans font-semibold">
-                Your motivation for becoming an assistant.
+                  Your motivation for becoming an assistant.
                 </p>
               </div>
             </div>
@@ -174,8 +201,8 @@ const Skberkas = () => {
               <input
                 type="radio"
                 name="my-accordion-5"
-                onClick={() => handleAccordionClick(5)}
-                checked={activeAccordion === 5}
+                onClick={() => handleAccordionClick(6)}
+                checked={activeAccordion === 6}
               />
               <div
                 className="collapse-title text-[17px] font-viga font-regular"

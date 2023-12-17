@@ -77,15 +77,16 @@ const About = () => {
             }}
             className="text-center xl:text-justify font-plus-jakarta-sans font-semibold py-6 md:px-10 lg:px-24 xl:px-0 lg:text-center text-[14.6px] md:text-[21.4px] lg:text-[19.9px]"
           >
-            Welcome to Cyber Recruitment, where we're thrilled to invite you to
-            be a part of an exciting and transformative journey. Cyber
-            Recruitment is not just a selection process, it's an opportunity for
-            you to showcase your skills and passion. As a participant, you will
-            undergo a series of tests designed to identify individuals who will
-            join us as valuable members of our dynamic team of assistants.
-            Whether you're an experienced professional or a newcomer, Cyber
-            Recruitment is your gateway to personal and professional growth.
-            Join us, and let's embark on this journey together.
+            Welcome to Cyber Recruitment, where we&apos;re thrilled to invite
+            you to be a part of an exciting and transformative journey. Cyber
+            Recruitment is not just a selection process, it&apos;s an
+            opportunity for you to showcase your skills and passion. As a
+            participant, you will undergo a series of tests designed to identify
+            individuals who will join us as valuable members of our dynamic team
+            of assistants. Whether you&apos;re an experienced professional or a
+            newcomer, Cyber Recruitment is your gateway to personal and
+            professional growth. Join us, and let&apos;s embark on this journey
+            together.
           </p>
         </div>
       </div>
