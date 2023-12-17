@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -50,6 +50,7 @@ export default function GeneralQuestionForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
+
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       const { note, ...formData } = data;
@@ -66,10 +67,10 @@ export default function GeneralQuestionForm() {
         entry_year: formData.year_of_enrollment, // Assuming 'year_of_enrollment' corresponds to 'entry_year'
         document: formData.document,
       };
-  
+
       // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
-      const apiUrl = "https://cyberrecruitment.vercel.app/participant" ;
-  
+      const apiUrl = "https://cyberrecruitment.vercel.app/participant";
+
       // Send data to the participant endpoint
       const participantResponse = await fetch(apiUrl, {
         method: "POST",
@@ -78,14 +79,14 @@ export default function GeneralQuestionForm() {
         },
         body: JSON.stringify(apiFormData),
       });
-  
+
       if (!participantResponse.ok) {
         throw new Error("Network response was not ok");
       }
-  
+
       const participantData = await participantResponse.json();
       console.log("Participant API response:", participantData);
-  
+
       // Send data to the send endpoint
       const sendResponse = await fetch("/api/send", {
         method: "POST",
@@ -97,14 +98,14 @@ export default function GeneralQuestionForm() {
           firstName: formData.name,
         }),
       });
-  
+
       if (!sendResponse.ok) {
         throw new Error("Network response was not ok");
       }
-  
+
       const sendData = await sendResponse.json();
       console.log("Send API response:", sendData);
-  
+
       window.alert("Your form has been submitted.");
       window.location.href = "/";
     } catch (error) {
@@ -113,7 +114,7 @@ export default function GeneralQuestionForm() {
       window.alert("Error submitting form. Please try again.");
     }
   }
-  
+
   return (
     <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
       <div className="flex flex-col gap-2">
@@ -220,7 +221,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[193px]">
+                            <SelectTrigger className="w-[182px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -248,7 +249,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[193px]">
+                            <SelectTrigger className="w-[183px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
