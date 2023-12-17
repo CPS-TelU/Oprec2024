@@ -50,58 +50,70 @@ export default function GeneralQuestionForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
-
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    const { note, ...formData } = data;
-    const apiFormData = {
-      id: 5, // Replace with the appropriate value for your use case
-      name: formData.name,
-      nim: formData.nim,
-      class: formData.class,
-      major: formData.major,
-      email: formData.email,
-      faculty: formData.faculty,
-      gender: formData.gender,
-      phone_number: formData.phone_number,
-      entry_year: formData.year_of_enrollment, // Assuming 'year_of_enrollment' corresponds to 'entry_year'
-      document: formData.document,
-    };
-    
-    const apiUrl = "https://cyberrecruitment.vercel.app/participant" ;
-    await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(apiFormData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((responseData) => {
-        console.log("API response:", responseData);
-        window.alert("Your form has been submitted.");
-        window.location.href = "/";
-      })
-      .catch((error) => {
-        console.error("Error submitting form:", error);
-        window.alert("Error submitting form. Please try again.");
-      });
-
-    await fetch("/api/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+    try {
+      const { note, ...formData } = data;
+      const apiFormData = {
+        id: 5, // Replace with the appropriate value for your use case
+        name: formData.name,
+        nim: formData.nim,
+        class: formData.class,
+        major: formData.major,
         email: formData.email,
-        firstName: formData.name,
-      }),
-    });
+        faculty: formData.faculty,
+        gender: formData.gender,
+        phone_number: formData.phone_number,
+        entry_year: formData.year_of_enrollment, // Assuming 'year_of_enrollment' corresponds to 'entry_year'
+        document: formData.document,
+      };
+  
+      // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
+      const apiUrl = "https://cyberrecruitment.vercel.app/participant" ;
+  
+      // Send data to the participant endpoint
+      const participantResponse = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(apiFormData),
+      });
+  
+      if (!participantResponse.ok) {
+        throw new Error("Network response was not ok");
+      }
+  
+      const participantData = await participantResponse.json();
+      console.log("Participant API response:", participantData);
+  
+      // Send data to the send endpoint
+      const sendResponse = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          firstName: formData.name,
+        }),
+      });
+  
+      if (!sendResponse.ok) {
+        throw new Error("Network response was not ok");
+      }
+  
+      const sendData = await sendResponse.json();
+      console.log("Send API response:", sendData);
+  
+      window.alert("Your form has been submitted.");
+      window.location.href = "/";
+    } catch (error) {
+      // Handle errors
+      console.error("Error submitting form:", error);
+      window.alert("Error submitting form. Please try again.");
+    }
   }
+  
   return (
     <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
       <div className="flex flex-col gap-2">
