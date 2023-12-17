@@ -11,6 +11,7 @@ const Partner = () => {
       src: "/partner/labrl.png",
       href: "https://www.instagram.com/rangkaianlistriklab/",
     },
+
     {
       src: "/partner/imv.png",
       href: "https://www.instagram.com/imv.laboratory/",
@@ -27,10 +28,10 @@ const Partner = () => {
       src: "/partner/elkom.jpg",
       href: "https://www.instagram.com/elkomlaboratory/",
     },
-    {
-      src: "/partner/daskom.png",
-      href: "https://www.instagram.com/telu.daskom/",
-    },//ga ada
+    // {
+    //   src: "/partner/daskom.png",
+    //   href: "https://www.instagram.com/telu.daskom/",
+    // },//ga ada
     {
       src: "/partner/tekdig.jpg",
       href: "https://www.instagram.com/tekdig.telu/",
@@ -43,13 +44,11 @@ const Partner = () => {
       src: "/partner/dastran.png",
       href: "https://www.instagram.com/dastranlaboratory/",
     },
-    {
-      src: "/partner/dsp.jpg",
-      href: "https://www.instagram.com/dsp.laboratory/",
-    },//ga ada
-    { src: "/partner/mbc.png", 
-      href: "https://www.instagram.com/mbclab/" 
-    },
+    // {
+    //   src: "/partner/dsp.jpg",
+    //   href: "https://www.instagram.com/dsp.laboratory/",
+    // },//ga ada
+    { src: "/partner/mbc.png", href: "https://www.instagram.com/mbclab/" },
     {
       src: "/partner/adaptive.png",
       href: "https://www.instagram.com/adaptivenetlab/",
@@ -61,7 +60,7 @@ const Partner = () => {
     {
       src: "/partner/Nanosatellite.png",
       href: "https://www.instagram.com/isatellitesociety/",
-    },//ga ada
+    },
     {
       src: "/partner/aicoms.png",
       href: "https://www.instagram.com/aicoms.telkomuniv/",
@@ -70,20 +69,20 @@ const Partner = () => {
       src: "/partner/elektronika.jpg",
       href: "https://www.instagram.com/electronicslaboratory/",
     },
-    { src: "/partner/upci.png", 
-      href: "https://www.instagram.com/upcilab/" 
-    },//ga ada
+    // { src: "/partner/upci.png",
+    //   href: "https://www.instagram.com/upcilab/"
+    // },//ga ada
     {
       src: "/partner/mobcomm.png",
       href: "https://www.instagram.com/mobilecommlaboratory/",
-    },//ga ada
+    },
   ];
   const [ref, inView] = useInView({
     triggerOnce: false, // Change this to false if you want the animation to trigger again whenever the element comes into view
   });
   return (
     <div className={styles.partnerArea} id="partner">
-      <div className="container mx-auto sm:px-4">
+      <div className="container mx-auto sm:px-8">
         <h1
           ref={ref}
           style={{
@@ -108,31 +107,29 @@ const Partner = () => {
         {/* PARTNER SMALL SCREEN */}
 
         <div className="flex flex-wrap md:hidden">
-          <div className="pr-4 pl-4">
-            <div className={styles.partnerWrap}>
-              <ul className={styles.partnerWrapUl}>
-                {partners_list.map((item, index) => (
-                  <li key={index} className={styles.partnerWrapUlLi}>
-                    <a href={item.href}>
-                      <Image
-                        src={item.src}
-                        alt={"partner"}
-                        width={70}
-                        height={70}
-                        className={styles.partnerWrapUlLiImg}
-                      />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className={styles.partnerWrap}>
+            <ul className={styles.partnerWrapUl}>
+              {partners_list.map((item, index) => (
+                <li key={index} className={styles.partnerWrapUlLi}>
+                  <a href={item.href}>
+                    <Image
+                      src={item.src}
+                      alt={"partner"}
+                      width={70}
+                      height={70}
+                      className={styles.partnerWrapUlLiImg}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         {/* PARTNER MD SCREEN */}
 
         <div className="hidden md:flex flex-wrap lg:hidden">
-          <div className="w-full pr-4 pl-4">
+          <div className="w-full">
             <div className={styles.partnerWrap}>
               <ul className={styles.partnerWrapUl}>
                 {partners_list.map((item, index) => (
@@ -164,7 +161,7 @@ const Partner = () => {
           }}
           className="hidden lg:flex flex-wrap"
         >
-          <div className="w-full pr-4 pl-4">
+          <div className="w-full">
             <div className={styles.partnerWrap}>
               <ul className={styles.partnerWrapUl}>
                 {partners_list.map((item, index) => (

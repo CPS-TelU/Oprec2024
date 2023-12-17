@@ -69,51 +69,51 @@ export default function GeneralQuestionForm() {
       };
 
       // Assuming your API endpoint is something like 'https://your-api-endpoint.com'
-        const apiUrl = "https://cyberrecruitment.vercel.app/participant";
+      const apiUrl = "https://cyberrecruitment.vercel.app/participant";
 
-        // Send data to the participant endpoint
-        const participantResponse = await fetch(apiUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(apiFormData),
-        });
+      // Send data to the participant endpoint
+      const participantResponse = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(apiFormData),
+      });
 
-        if (!participantResponse.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const participantData = await participantResponse.json();
-        console.log("Participant API response:", participantData);
-
-        // Send data to the send endpoint
-        const sendResponse = await fetch("/api/send", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: formData.email,
-            firstName: formData.name,
-          }),
-        });
-        
-        const sendData = await sendResponse.json();
-        if (!sendResponse.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        console.log("Send API response:", sendData);
-
-        window.alert("Your form has been submitted.");
-        window.location.href = "/";
-      } catch (error) {
-        // Handle errors
-        console.error("Error submitting form:", error);
-        window.alert("Error submitting form. Please try again.");
+      if (!participantResponse.ok) {
+        throw new Error("Network response was not ok");
       }
+
+      const participantData = await participantResponse.json();
+      console.log("Participant API response:", participantData);
+
+      // Send data to the send endpoint
+      const sendResponse = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          firstName: formData.name,
+        }),
+      });
+
+      const sendData = await sendResponse.json();
+      if (!sendResponse.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      console.log("Send API response:", sendData);
+
+      window.alert("Your form has been submitted.");
+      window.location.href = "/";
+    } catch (error) {
+      // Handle errors
+      console.error("Error submitting form:", error);
+      window.alert("Error submitting form. Please try again.");
     }
+  }
 
   return (
     <div className="min-w-full mt-5 md:mt-7 lg:mt-10 ">
@@ -192,7 +192,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[193px]">
+                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -221,7 +221,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[182px]">
+                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -249,7 +249,7 @@ export default function GeneralQuestionForm() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-[183px]">
+                            <SelectTrigger className="text-[12px] sm:text-[14px] w-[170px] sm:w-[193px]">
                               <SelectValue placeholder="Select an Option" />
                             </SelectTrigger>
                           </FormControl>
@@ -379,7 +379,10 @@ export default function GeneralQuestionForm() {
                   <AlertDescription>
                     Ensure that the document link you{"\u0027"}ve submitted is
                     accessible to the public. Set general access to anyone with
-                    the link
+                    the link <br />
+                    <br />* Pastikan bahwa tautan dokumen yang Anda kirimkan
+                    dapat diakses oleh publik. Tetapkan akses umum untuk siapa
+                    saja yang memiliki tautan tersebut*
                   </AlertDescription>
                 </Alert>
               </div>
